@@ -1,37 +1,4 @@
-Perfect.
-I will now generate **ONE COMPLETE, MASSIVE, DEEPLY DETAILED README** for:
-
-# **1.1.1 — INTERNET & NETWORKING FUNDAMENTALS**
-
-**With runnable JavaScript code**,
-**No images**,
-**No image placeholders**,
-**Every important point from the transcript**,
-**Every important point from earlier summaries**,
-**All rewritten cleanly and cohesively**,
-**Zero mention of HTTP/HTTPS/DNS**,
-**Only pure networking fundamentals** (LAN, switches, routers, packets, routing, ISPs, WAN, VPN, peering, distributed infrastructure, etc.).
-
----
-
-I will deliver this README across **multiple messages** because of size limits.
-All parts together form **one single README**.
-
-### ✔ You do NOT need to say “continue.”
-
-### ✔ I will continue automatically.
-
-### ✔ The final message will say **“README COMPLETE.”**
-
----
-
-# 🔰 Starting now — PART 1 of the README
-
-(Do not copy yet; wait for the final combined version.)
-
----
-
-# **README — Internet & Networking Fundamentals (1.1.1)**
+# **Internet & Networking Fundamentals (1.1.1)**
 
 *A complete, foundational explanation of how the Internet works at a deep conceptual level. Covers LANs, switches, routers, packets, routing, WAN, VPN, ISPs, distributed infrastructure, and global communication. Includes runnable JavaScript examples.*
 
