@@ -279,12 +279,6 @@ A protocol is a set of rules. Here are the most critical ones:
 * **Mechanism:** "Fire and forget." It streams data instantly without checking if the receiver got it. No retransmission of lost packets.
 * **Use Cases:** Online Gaming, Live Video Streaming, VoIP (where speed matters more than perfection).
 
-## Appendix
-
-- This document is based on the referenced video and the official notes linked at the top.  
-- Diagrams above are ASCII for quick inclusion in text files; replace with images/SVGs for visual documentation if desired.
-
----
 
 
 
