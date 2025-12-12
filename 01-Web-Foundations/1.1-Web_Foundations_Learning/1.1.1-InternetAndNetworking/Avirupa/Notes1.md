@@ -163,33 +163,15 @@ Topology refers to the physical or logical layout of devices (nodes) and how the
 * **Pro:** Cheap and easy to install for small networks.
 * **Con:** If the main cable breaks, the *entire* network goes down.
 
-[A]      [D]
- |        |
--------------------------
-    |          |
-   [B]        [C]
-
 ### B. Ring Topology
 * **Layout:** Each device connects to exactly two other devices, forming a closed circle. Data travels in one direction.
 * **Pro:** Organized data flow (Token Ring).
 * **Con:** If one computer or cable fails, the loop breaks, and the network fails.
 
-      [A]
-     /   \
-   [B]   [C]
-     \   /
-      [D]
-
 ### C. Star Topology
 * **Layout:** All devices connect individually to a central hub or switch. This is the most common Wi-Fi/Ethernet setup today.
 * **Pro:** If one cable breaks, only that one device goes offline. Easy to troubleshoot.
 * **Con:** If the central switch fails, the whole network stops.
-
-      [A]
-       |
- [D] - [O] - [C]
-       |
-      [B]
 
 ### D. Mesh Topology
 * **Layout:** Devices are interconnected with many redundant connections.
@@ -198,21 +180,9 @@ Topology refers to the physical or logical layout of devices (nodes) and how the
 * **Pro:** Extremely reliable. If one path is blocked, data finds another way.
 * **Con:** Very expensive due to cabling costs. Used for critical infrastructure (Internet backbone).
 
-           [A]
-         /  |  \
-       /    |    \
-    [B]----[C]----[D]          
-       \    |    /
-         \  |  /
-           [E]
-
 ### E. Tree Topology
 * **Layout:** A hierarchical "Star of Stars." A root node connects to switches, which connect to other switches or devices.
 * **Usage:** Used in large office buildings (Floor switch -> Building switch -> Main Router).
-
-              [Root]
-             /   |   \
-         [A]    [B]   [C]
 
 ### F. Hybrid Topology
 * **Layout:** A combination of two or more different topologies (e.g., a Star backbone connecting multiple Bus networks).
