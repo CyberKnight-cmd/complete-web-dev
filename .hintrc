@@ -3,12 +3,7 @@
     "development"
   ],
   "hints": {
-    "axe/forms": [
-      "default",
-      {
-        "label": "off"
-      }
-    ],
+    "axe/forms": "off",
     "compat-api/html": [
       "default",
       {
@@ -17,6 +12,10 @@
           "input[type=week]"
         ]
       }
-    ]
+    ],
+    "meta-viewport": "off",
+    "button-type": "off",
+    "axe/parsing": "off",
+    "axe/name-role-value": "off"
   }
 }

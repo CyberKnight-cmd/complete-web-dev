@@ -1,8 +1,4 @@
-# ✅ **CSS Zero-to-Hero Notes — Section 1**
-
-*(From the start of the transcript until “Now let’s begin CSS Level 1”)*
-
-
+# ✅ **CSS Zero-to-Hero Notes
 ---
 
 # **1. Introduction to the Course**
