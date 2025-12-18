@@ -1,4 +1,4 @@
 # Resources
 
-[Web Accessibility Tutorial by RoadsideCoder](https://www.youtube.com/watch?v=VyWRmepESoQ)
+- [Web Accessibility Tutorial by RoadsideCoder](https://www.youtube.com/watch?v=VyWRmepESoQ) - give it a go
 
