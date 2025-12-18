@@ -10,7 +10,7 @@ This repository contains detailed documentation on the fundamental protocols of 
 * **Key Characteristic:** Stateless protocol.
 * **Security:** Sends data in plain text (unencrypted).
 * **Use Case:** General web browsing where security is not a concern (becoming obsolete).
-* ** Read the full guide:** [HTTP.md](HTTP.md)
+* **Read the full guide:** [HTTP.md](HTTP.md)
 
 ### HTTPS (HyperText Transfer Protocol Secure)
 **HTTPS** is the secure version of HTTP. It uses encryption (TLS/SSL) to secure the communication channel between the client and the server, ensuring that data cannot be intercepted or tampered with.
@@ -18,7 +18,7 @@ This repository contains detailed documentation on the fundamental protocols of 
 * **Key Characteristic:** Encrypted communication using Public/Private keys.
 * **Security:** Uses TLS/SSL certificates to verify server identity.
 * **Use Case:** Banking, login pages, shopping, and modern standard web browsing.
-* ** Read the full guide:** [HTTPS.md](HTTPS.md)
+* **Read the full guide:** [HTTPS.md](HTTPS.md)
 
 ---
 
