@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images & Media Accessibility Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        .demo-section { background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .good-example { background: #d4edda; border-left: 4px solid #28a745; }
+        .bad-example { background: #f8d7da; border-left: 4px solid #dc3545; }
+        figure { margin: 20px 0; text-align: center; }
+        figcaption { font-style: italic; margin-top: 10px; }
+        .placeholder-img { background: #e9ecef; border: 2px dashed #6c757d; display: inline-block; text-align: center; line-height: 150px; color: #6c757d; }
+        video, audio { max-width: 100%; }
+        .alt-text-demo { border: 1px solid #ddd; padding: 10px; margin: 10px 0; }
+        code { background: #f1f3f4; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Images & Media Accessibility Demo</h1>
+        <p>This page demonstrates proper implementation of accessible images, videos, and audio with appropriate alt text and captions.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Image Alt Text Examples</h2>
+            
+            <div class="demo-section good-example">
+                <h3>Informative Images (Good Examples)</h3>
+                
+                <div class="alt-text-demo">
+                    <div class="placeholder-img" style="width: 300px; height: 200px;">
+                        [Chart Image]
+                    </div>
+                    <p><strong>Alt text:</strong> "Sales increased 45% from Q3 to Q4 2024"</p>
+                    <code>&lt;img src="sales-chart.png" alt="Sales increased 45% from Q3 to Q4 2024"&gt;</code>
+                </div>
+
+                <div class="alt-text-demo">
+                    <div class="placeholder-img" style="width: 200px; height: 150px;">
+                        [Product Photo]
+                    </div>
+                    <p><strong>Alt text:</strong> "Red running shoes with white soles and mesh upper"</p>
+                    <code>&lt;img src="shoes.jpg" alt="Red running shoes with white soles and mesh upper"&gt;</code>
+                </div>
+            </div>
+
+            <div class="demo-section">
+                <h3>Decorative Images</h3>
+                <div class="alt-text-demo">
+                    <div class="placeholder-img" style="width: 100px; height: 50px;">
+                        [Border Decoration]
+                    </div>
+                    <p><strong>Alt text:</strong> Empty (decorative only)</p>
+                    <code>&lt;img src="decoration.png" alt=""&gt;</code>
+                </div>
+            </div>
+
+            <div class="demo-section bad-example">
+                <h3>Poor Alt Text Examples (Avoid These)</h3>
+                <ul>
+                    <li><code>alt="image"</code> - Too generic</li>
+                    <li><code>alt="picture of a dog"</code> - Unnecessary "picture of"</li>
+                    <li><code>alt="A brown and white dog sitting on green grass in a park with trees in the background on a sunny day"</code> - Too verbose</li>
+                    <li>Missing alt attribute entirely</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Figure and Caption Examples</h2>
+            
+            <figure>
+                <div class="placeholder-img" style="width: 400px; height: 250px; margin: 0 auto;">
+                    [Data Visualization]
+                </div>
+                <figcaption>
+                    Figure 1: Website traffic growth over 12 months showing 300% increase in organic search visits
+                </figcaption>
+            </figure>
+
+            <figure>
+                <div class="placeholder-img" style="width: 350px; height: 200px; margin: 0 auto;">
+                    [Team Photo]
+                </div>
+                <figcaption>
+                    Our development team at the 2024 company retreat
+                </figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Responsive Images</h2>
+            
+            <div class="demo-section">
+                <h3>Using srcset for Different Screen Sizes</h3>
+                <div class="placeholder-img" style="width: 100%; max-width: 600px; height: 300px;">
+                    [Responsive Image - Resize browser to see effect]
+                </div>
+                <pre><code>&lt;img src="image-800.jpg"
+     srcset="image-400.jpg 400w,
+             image-800.jpg 800w,
+             image-1200.jpg 1200w"
+     sizes="(max-width: 600px) 400px,
+            (max-width: 1000px) 800px,
+            1200px"
+     alt="Product showcase"&gt;</code></pre>
+            </div>
+
+            <div class="demo-section">
+                <h3>Picture Element for Art Direction</h3>
+                <div class="placeholder-img" style="width: 100%; max-width: 500px; height: 250px;">
+                    [Art-Directed Image - Different crops for different screens]
+                </div>
+                <pre><code>&lt;picture&gt;
+    &lt;source media="(max-width: 600px)" srcset="mobile-crop.jpg"&gt;
+    &lt;source media="(max-width: 1200px)" srcset="tablet-crop.jpg"&gt;
+    &lt;img src="desktop-crop.jpg" alt="Team collaboration"&gt;
+&lt;/picture&gt;</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Video with Captions</h2>
+            
+            <div class="demo-section">
+                <h3>Accessible Video Implementation</h3>
+                <video controls width="640" height="360" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360'%3E%3Crect width='100%25' height='100%25' fill='%23e9ecef'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%236c757d'%3EVideo Thumbnail%3C/text%3E%3C/svg%3E">
+                    <source src="#" type="video/mp4">
+                    <track kind="captions" src="#" srclang="en" label="English" default>
+                    <track kind="subtitles" src="#" srclang="es" label="Español">
+                    <p>Your browser doesn't support HTML5 video. <a href="#">Download the video</a>.</p>
+                </video>
+                
+                <h4>Video Features:</h4>
+                <ul>
+                    <li>✅ Controls for user interaction</li>
+                    <li>✅ Poster image for preview</li>
+                    <li>✅ Multiple source formats</li>
+                    <li>✅ Captions track for accessibility</li>
+                    <li>✅ Subtitles in multiple languages</li>
+                    <li>✅ Fallback content for unsupported browsers</li>
+                </ul>
+            </div>
+
+            <div class="demo-section">
+                <h3>Sample WebVTT Caption File</h3>
+                <pre><code>WEBVTT
+
+00:00:00.000 --&gt; 00:00:03.000
+Welcome to our HTML tutorial.
+
+00:00:03.500 --&gt; 00:00:07.000
+Today we'll learn about accessible media.
+
+00:00:07.500 --&gt; 00:00:11.000
+Let's start with proper image implementation.</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Audio with Transcript</h2>
+            
+            <div class="demo-section">
+                <h3>Accessible Audio Implementation</h3>
+                <audio controls>
+                    <source src="#" type="audio/mp3">
+                    <source src="#" type="audio/ogg">
+                    <p>Your browser doesn't support HTML5 audio. <a href="#">Download the audio file</a>.</p>
+                </audio>
+                
+                <details>
+                    <summary>Audio Transcript</summary>
+                    <p><strong>Speaker:</strong> Welcome to our podcast about web accessibility. In today's episode, we'll discuss the importance of providing alternative text for images and captions for videos. These features ensure that all users, including those using screen readers or who are deaf or hard of hearing, can access your content effectively.</p>
+                </details>
+            </div>
+        </section>
+
+        <section>
+            <h2>Complex Images with Descriptions</h2>
+            
+            <div class="demo-section">
+                <h3>Chart with Detailed Description</h3>
+                <figure>
+                    <div class="placeholder-img" style="width: 500px; height: 300px; margin: 0 auto;">
+                        [Complex Bar Chart]
+                    </div>
+                    <figcaption>
+                        <strong>Figure 2:</strong> Quarterly revenue comparison 2023-2024
+                    </figcaption>
+                </figure>
+                
+                <details>
+                    <summary>Detailed Chart Description</summary>
+                    <p>This bar chart compares quarterly revenue between 2023 and 2024. The data shows:</p>
+                    <ul>
+                        <li>Q1 2023: $2.1M, Q1 2024: $2.8M (33% increase)</li>
+                        <li>Q2 2023: $2.3M, Q2 2024: $3.2M (39% increase)</li>
+                        <li>Q3 2023: $2.7M, Q3 2024: $3.9M (44% increase)</li>
+                        <li>Q4 2023: $3.1M, Q4 2024: $4.5M (45% increase)</li>
+                    </ul>
+                    <p>The chart demonstrates consistent growth across all quarters, with the highest growth rate in Q4.</p>
+                </details>
+            </div>
+        </section>
+
+        <section>
+            <h2>Lazy Loading Implementation</h2>
+            
+            <div class="demo-section">
+                <h3>Performance-Optimized Images</h3>
+                <p>Images below use native lazy loading:</p>
+                
+                <div style="height: 200px; margin: 20px 0;">
+                    <div class="placeholder-img" style="width: 300px; height: 200px;">
+                        [Lazy Loaded Image 1]<br>
+                        <small>loading="lazy"</small>
+                    </div>
+                </div>
+                
+                <div style="height: 200px; margin: 20px 0;">
+                    <div class="placeholder-img" style="width: 300px; height: 200px;">
+                        [Lazy Loaded Image 2]<br>
+                        <small>loading="lazy"</small>
+                    </div>
+                </div>
+                
+                <code>&lt;img src="image.jpg" alt="Description" loading="lazy"&gt;</code>
+            </div>
+        </section>
+
+        <section>
+            <h2>Accessibility Testing Checklist</h2>
+            
+            <div class="demo-section">
+                <h3>Image Accessibility Checklist</h3>
+                <ul>
+                    <li>✅ All images have alt attributes</li>
+                    <li>✅ Alt text is descriptive and concise</li>
+                    <li>✅ Decorative images have empty alt text</li>
+                    <li>✅ Complex images have detailed descriptions</li>
+                    <li>✅ Images have appropriate file names</li>
+                    <li>✅ Responsive images work across devices</li>
+                </ul>
+
+                <h3>Media Accessibility Checklist</h3>
+                <ul>
+                    <li>✅ Videos have captions or subtitles</li>
+                    <li>✅ Audio content has transcripts</li>
+                    <li>✅ Media controls are keyboard accessible</li>
+                    <li>✅ Auto-playing media is avoided or muted</li>
+                    <li>✅ Fallback content provided for unsupported formats</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>&copy; 2024 Images & Media Accessibility Demo. This page demonstrates proper implementation of accessible media content.</small></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Optimization Demo</title>
+    
+    <!-- DNS Prefetch for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    
+    <!-- Preconnect to critical third-party origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23007bff'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24'%3EHero Image%3C/text%3E%3C/svg%3E" as="image">
+    
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; }
+        .demo-section { background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .hero { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23007bff'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24'%3EHero Image%3C/text%3E%3C/svg%3E"); height: 300px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; font-size: 2em; border-radius: 8px; }
+        code { background: #f1f3f4; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .performance-tip { background: #d4edda; border-left: 4px solid #28a745; }
+        .warning { background: #fff3cd; border-left: 4px solid #ffc107; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Performance Optimization Demo</h1>
+        <p>This page demonstrates HTML performance optimization techniques using resource hints.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Hero Section (Preloaded)</h2>
+            <div class="hero">
+                <span>Critical Above-the-Fold Content</span>
+            </div>
+            <p>This hero image was preloaded to ensure fast rendering above the fold.</p>
+        </section>
+
+        <section>
+            <h2>Resource Hints Implemented</h2>
+            
+            <div class="demo-section performance-tip">
+                <h3>DNS Prefetch</h3>
+                <pre><code>&lt;link rel="dns-prefetch" href="//fonts.googleapis.com"&gt;
+&lt;link rel="dns-prefetch" href="//cdn.jsdelivr.net"&gt;</code></pre>
+                <p><strong>Purpose:</strong> Resolves DNS lookups early for external domains</p>
+                <p><strong>Benefit:</strong> Saves 20-120ms per domain</p>
+            </div>
+
+            <div class="demo-section performance-tip">
+                <h3>Preconnect</h3>
+                <pre><code>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</code></pre>
+                <p><strong>Purpose:</strong> Establishes early connections to critical third-party origins</p>
+                <p><strong>Benefit:</strong> Saves 100-500ms connection time</p>
+            </div>
+
+            <div class="demo-section performance-tip">
+                <h3>Preload</h3>
+                <pre><code>&lt;link rel="preload" href="hero-image.jpg" as="image"&gt;</code></pre>
+                <p><strong>Purpose:</strong> Loads critical resources with high priority</p>
+                <p><strong>Benefit:</strong> Ensures critical resources load first</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Performance Optimization Examples</h2>
+            
+            <div class="demo-section">
+                <h3>Critical CSS Preloading</h3>
+                <pre><code>&lt;link rel="preload" href="critical.css" as="style" 
+      onload="this.onload=null;this.rel='stylesheet'"&gt;
+&lt;noscript&gt;&lt;link rel="stylesheet" href="critical.css"&gt;&lt;/noscript&gt;</code></pre>
+                <p>Loads critical CSS asynchronously to prevent render blocking.</p>
+            </div>
+
+            <div class="demo-section">
+                <h3>Font Optimization</h3>
+                <pre><code>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin&gt;</code></pre>
+                <p>Optimizes web font loading with preconnect and preload.</p>
+            </div>
+
+            <div class="demo-section">
+                <h3>JavaScript Preloading</h3>
+                <pre><code>&lt;link rel="preload" href="app.js" as="script"&gt;
+&lt;script src="app.js" defer&gt;&lt;/script&gt;</code></pre>
+                <p>Preloads JavaScript while maintaining execution order.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Resource Hint Guidelines</h2>
+            
+            <div class="demo-section">
+                <h3>When to Use Each Hint</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: #e9ecef;">
+                            <th style="border: 1px solid #ddd; padding: 12px;">Hint</th>
+                            <th style="border: 1px solid #ddd; padding: 12px;">Use Case</th>
+                            <th style="border: 1px solid #ddd; padding: 12px;">Benefit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px;"><code>dns-prefetch</code></td>
+                            <td style="border: 1px solid #ddd; padding: 12px;">External domains you'll connect to</td>
+                            <td style="border: 1px solid #ddd; padding: 12px;">Faster DNS resolution</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px;"><code>preconnect</code></td>
+                            <td style="border: 1px solid #ddd; padding: 12px;">Critical third-party resources</td>
+                            <td style="border: 1px solid #ddd; padding: 12px;">Faster connection setup</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px;"><code>preload</code></td>
+                            <td style="border: 1px solid #ddd; padding: 12px;">Critical current page resources</td>
+                            <td style="border: 1px solid #ddd; padding: 12px;">High priority loading</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px;"><code>prefetch</code></td>
+                            <td style="border: 1px solid #ddd; padding: 12px;">Likely future page resources</td>
+                            <td style="border: 1px solid #ddd; padding: 12px;">Faster subsequent loads</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Common Mistakes to Avoid</h2>
+            
+            <div class="demo-section warning">
+                <h3>Overusing Preload</h3>
+                <p><strong>Problem:</strong> Preloading too many resources can hurt performance</p>
+                <p><strong>Solution:</strong> Limit to 3-5 truly critical resources</p>
+                <pre><code>&lt;!-- WRONG: Too many preloads --&gt;
+&lt;link rel="preload" href="image1.jpg" as="image"&gt;
+&lt;link rel="preload" href="image2.jpg" as="image"&gt;
+&lt;link rel="preload" href="image3.jpg" as="image"&gt;
+&lt;!-- ... 20 more preloads --&gt;</code></pre>
+            </div>
+
+            <div class="demo-section warning">
+                <h3>Missing Crossorigin for Fonts</h3>
+                <p><strong>Problem:</strong> Fonts require crossorigin attribute</p>
+                <p><strong>Solution:</strong> Always include crossorigin for font preloads</p>
+                <pre><code>&lt;!-- WRONG --&gt;
+&lt;link rel="preload" href="font.woff2" as="font" type="font/woff2"&gt;
+
+&lt;!-- CORRECT --&gt;
+&lt;link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin&gt;</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Performance Testing</h2>
+            
+            <div class="demo-section">
+                <h3>Tools for Measuring Impact</h3>
+                <ul>
+                    <li><strong>Chrome DevTools:</strong> Network tab shows resource loading</li>
+                    <li><strong>Lighthouse:</strong> Performance audit with recommendations</li>
+                    <li><strong>WebPageTest:</strong> Detailed performance analysis</li>
+                    <li><strong>Core Web Vitals:</strong> Real user experience metrics</li>
+                </ul>
+
+                <h3>Key Metrics to Monitor</h3>
+                <ul>
+                    <li><strong>First Contentful Paint (FCP):</strong> When first content appears</li>
+                    <li><strong>Largest Contentful Paint (LCP):</strong> When main content loads</li>
+                    <li><strong>Time to Interactive (TTI):</strong> When page becomes interactive</li>
+                    <li><strong>Resource Load Times:</strong> Individual resource performance</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>&copy; 2024 Performance Optimization Demo. This page demonstrates HTML performance best practices.</small></p>
+    </footer>
+</body>
+</html>

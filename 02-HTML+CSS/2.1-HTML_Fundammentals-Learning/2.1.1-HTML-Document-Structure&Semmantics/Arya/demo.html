@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Document Structure Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        header, nav, main, aside, footer { margin: 10px 0; padding: 15px; border: 1px solid #ccc; }
+        header { background: #f0f8ff; }
+        nav { background: #f5f5f5; }
+        main { background: #fffef7; }
+        aside { background: #f0f0f0; }
+        footer { background: #e6e6fa; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Website Header</h1>
+        <p>This is the main header of the website containing branding and key information.</p>
+    </header>
+
+    <nav>
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Main Content Area</h1>
+        
+        <article>
+            <header>
+                <h2>Article Title</h2>
+                <p>Published on <time datetime="2024-01-15">January 15, 2024</time></p>
+            </header>
+            
+            <section>
+                <h3>Introduction</h3>
+                <p>This article demonstrates proper HTML document structure using semantic elements.</p>
+                <p>Notice how we use <em>emphasis</em> for stress and <strong>strong importance</strong> for critical information.</p>
+            </section>
+            
+            <section>
+                <h3>Key Points</h3>
+                <ul>
+                    <li>Use semantic HTML elements for meaning</li>
+                    <li>Maintain proper heading hierarchy</li>
+                    <li>Structure content logically</li>
+                </ul>
+            </section>
+        </article>
+
+        <article>
+            <h2>Second Article</h2>
+            <p>Each article is self-contained and could stand alone.</p>
+            <p>This demonstrates multiple articles within the main content area.</p>
+        </article>
+    </main>
+
+    <aside>
+        <h2>Sidebar Content</h2>
+        <p>This aside contains supplementary information related to the main content.</p>
+        <section>
+            <h3>Related Links</h3>
+            <ul>
+                <li><a href="#">HTML Specification</a></li>
+                <li><a href="#">Accessibility Guidelines</a></li>
+            </ul>
+        </section>
+    </aside>
+
+    <footer>
+        <p>&copy; 2024 HTML Structure Demo. This footer contains site-wide information.</p>
+        <p>Contact: <a href="mailto:demo@example.com">demo@example.com</a></p>
+    </footer>
+</body>
+</html>

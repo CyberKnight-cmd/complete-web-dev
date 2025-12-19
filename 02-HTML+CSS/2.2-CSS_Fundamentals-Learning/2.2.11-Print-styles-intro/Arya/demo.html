@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Styles Demo</title>
+    <style>
+        /* Screen styles */
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .demo-section { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .no-print { background: #ffebee; padding: 10px; border: 2px solid red; }
+        .sidebar { background: #e3f2fd; padding: 15px; float: right; width: 200px; }
+        
+        /* Print styles */
+        @media print {
+            body { font-family: serif; font-size: 12pt; color: black; }
+            .no-print { display: none; }
+            .sidebar { display: none; }
+            .demo-section { background: none; border: 1px solid black; }
+            .print-only { display: block; }
+            h1 { font-size: 18pt; }
+            h2 { font-size: 16pt; page-break-after: avoid; }
+            .page-break { page-break-before: always; }
+        }
+        
+        .print-only { display: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Print Styles Demonstration</h1>
+        <p>This page shows different content for screen vs print. Use Ctrl+P to see print preview.</p>
+    </header>
+
+    <div class="sidebar no-print">
+        <h3>Sidebar</h3>
+        <p>This sidebar will be hidden when printing.</p>
+    </div>
+
+    <main>
+        <section class="demo-section">
+            <h2>Main Content</h2>
+            <p>This content will appear in both screen and print versions, but with different styling.</p>
+        </section>
+
+        <div class="no-print">
+            <h2>Screen Only Content</h2>
+            <p>This section will not appear when printing.</p>
+        </div>
+
+        <div class="print-only">
+            <h2>Print Only Content</h2>
+            <p>This section only appears when printing.</p>
+        </div>
+
+        <section class="demo-section page-break">
+            <h2>New Page Section</h2>
+            <p>This section will start on a new page when printed.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Use your browser's print preview (Ctrl+P) to see the print-optimized version.</p>
+    </footer>
+</body>
+</html>

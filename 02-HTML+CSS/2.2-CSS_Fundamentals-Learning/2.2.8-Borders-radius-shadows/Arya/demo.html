@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borders, Radius & Shadows Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .demo-section { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .example-box { width: 150px; height: 100px; margin: 15px; display: inline-block; background: white; }
+        
+        /* Border examples */
+        .solid-border { border: 3px solid #007bff; }
+        .dashed-border { border: 3px dashed #28a745; }
+        .dotted-border { border: 3px dotted #dc3545; }
+        
+        /* Radius examples */
+        .rounded { border-radius: 10px; border: 2px solid #6c757d; }
+        .circle { border-radius: 50%; border: 2px solid #17a2b8; }
+        .complex-radius { border-radius: 20px 5px 20px 5px; border: 2px solid #ffc107; }
+        
+        /* Shadow examples */
+        .basic-shadow { box-shadow: 2px 4px 8px rgba(0,0,0,0.3); }
+        .inset-shadow { box-shadow: inset 0 2px 4px rgba(0,0,0,0.3); }
+        .multiple-shadow { box-shadow: 0 0 10px red, 0 0 20px blue; }
+        
+        /* Combined effects */
+        .card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            background: white;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Borders, Radius & Shadows Demo</h1>
+        <p>Demonstration of CSS border properties, border-radius, and box-shadow effects.</p>
+    </header>
+
+    <main>
+        <section class="demo-section">
+            <h2>Border Styles</h2>
+            <div class="example-box solid-border"></div>
+            <div class="example-box dashed-border"></div>
+            <div class="example-box dotted-border"></div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Border Radius</h2>
+            <div class="example-box rounded"></div>
+            <div class="example-box circle"></div>
+            <div class="example-box complex-radius"></div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Box Shadows</h2>
+            <div class="example-box basic-shadow"></div>
+            <div class="example-box inset-shadow"></div>
+            <div class="example-box multiple-shadow"></div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Combined Effects</h2>
+            <div class="card">
+                <h3>Card Component</h3>
+                <p>This card combines border, border-radius, and box-shadow for a modern look.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

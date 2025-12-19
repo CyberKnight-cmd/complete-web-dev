@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset vs Normalize Demo</title>
+    <style>
+        /* No reset - browser defaults */
+        .no-reset h1, .no-reset h2, .no-reset p, .no-reset ul {
+            /* Using browser defaults */
+        }
+        
+        /* CSS Reset example */
+        .reset-example * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+        }
+        
+        /* Normalize-like approach */
+        .normalize-example {
+            font-family: system-ui, sans-serif;
+        }
+        .normalize-example h1 { font-size: 2em; margin: 0.67em 0; }
+        .normalize-example h2 { font-size: 1.5em; margin: 0.83em 0; }
+        .normalize-example p { margin: 1em 0; }
+        
+        /* Demo styling */
+        .demo-section { border: 2px solid #ddd; padding: 20px; margin: 20px 0; }
+        .demo-section h3 { background: #f0f0f0; padding: 10px; margin: -20px -20px 20px -20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Reset vs Normalize Comparison</h1>
+        <p>This page shows the difference between no reset, CSS reset, and normalize approaches.</p>
+    </header>
+
+    <main>
+        <section class="demo-section no-reset">
+            <h3>No Reset (Browser Defaults)</h3>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <p>This paragraph uses browser default margins and styling.</p>
+            <ul>
+                <li>List item 1</li>
+                <li>List item 2</li>
+            </ul>
+        </section>
+
+        <section class="demo-section reset-example">
+            <h3>CSS Reset Applied</h3>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <p>This paragraph has all default styling removed.</p>
+            <ul>
+                <li>List item 1</li>
+                <li>List item 2</li>
+            </ul>
+        </section>
+
+        <section class="demo-section normalize-example">
+            <h3>Normalize Approach</h3>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <p>This paragraph preserves useful defaults while ensuring consistency.</p>
+            <ul>
+                <li>List item 1</li>
+                <li>List item 2</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Compare the three approaches to see their different effects on default styling.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility & ARIA Labels</title>
+</head>
+<body>
+
+    <h1>Accessibility Best Practices & ARIA Labels</h1>
+
+    <!-- ARIA = Accessible Rich Internet Applications -->
+    <!-- Helps screen readers understand your content for visually impaired users -->
+
+    <h2>1. Form Accessibility</h2>
+    <form>
+        <!-- Always use labels with inputs for screen readers -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" aria-required="true" aria-describedby="usernameHelp">
+        <small id="usernameHelp">Must be 5-20 characters</small>
+        <br><br>
+
+        <!-- aria-label: provides label when visual label is missing -->
+        <input type="search" aria-label="Search the website" placeholder="Search...">
+        <br><br>
+
+        <!-- aria-labelledby: references another element as label -->
+        <div id="emailLabel">Email Address</div>
+        <input type="email" aria-labelledby="emailLabel">
+    </form>
+
+    <h2>2. Button Accessibility</h2>
+    <!-- aria-label describes button purpose when icon-only -->
+    <button aria-label="Close dialog">X</button>
+    <button aria-label="Submit form">→</button>
+
+    <h2>3. Image Accessibility</h2>
+    <!-- alt text is crucial for screen readers -->
+    <img src="logo.png" alt="Company logo showing a blue mountain">
+    <!-- Decorative images should have empty alt -->
+    <img src="decoration.png" alt="">
+
+    <h2>4. Navigation Accessibility</h2>
+    <!-- aria-current shows current page in navigation -->
+    <nav aria-label="Main navigation">
+        <a href="#" aria-current="page">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <h2>5. Dynamic Content</h2>
+    <!-- aria-live announces changes to screen readers -->
+    <div aria-live="polite" id="status">
+        Status updates appear here
+    </div>
+
+    <!-- aria-expanded shows if content is expanded/collapsed -->
+    <button aria-expanded="false" aria-controls="content">
+        Show More
+    </button>
+    <div id="content" hidden>
+        Hidden content here
+    </div>
+
+    <h2>6. Keyboard Navigation</h2>
+    <!-- tabindex makes non-interactive elements focusable -->
+    <div tabindex="0" role="button" aria-label="Custom button">
+        Click me (keyboard accessible)
+    </div>
+
+    <!-- 
+    KEY ACCESSIBILITY PRACTICES:
+    1. Use semantic HTML (header, nav, main, footer)
+    2. Add alt text to all images
+    3. Use labels with form inputs
+    4. Ensure keyboard navigation works
+    5. Use ARIA attributes when needed
+    6. Maintain good color contrast
+    7. Don't rely only on color to convey information
+    -->
+
+    <script>
+        // Example: Getting values from accessible form
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let username = document.getElementById('username').value;
+            console.log('Username:', username);
+        });
+    </script>
+
+</body>
+</html>

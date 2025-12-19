@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists & Tables Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; }
+        .demo-section { background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #e9ecef; font-weight: bold; }
+        caption { font-weight: bold; margin-bottom: 10px; }
+        .good-example { background: #d4edda; border-left: 4px solid #28a745; }
+        .bad-example { background: #f8d7da; border-left: 4px solid #dc3545; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lists & Tables Accessibility Demo</h1>
+        <p>This page demonstrates proper implementation of HTML lists and tables with accessibility features.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>List Types</h2>
+            
+            <div class="demo-section good-example">
+                <h3>Unordered List</h3>
+                <ul>
+                    <li>HTML - Structure and content</li>
+                    <li>CSS - Styling and layout</li>
+                    <li>JavaScript - Interactivity and behavior</li>
+                </ul>
+            </div>
+
+            <div class="demo-section good-example">
+                <h3>Ordered List</h3>
+                <ol>
+                    <li>Plan the website structure</li>
+                    <li>Create HTML markup</li>
+                    <li>Add CSS styling</li>
+                    <li>Implement JavaScript functionality</li>
+                    <li>Test and deploy</li>
+                </ol>
+            </div>
+
+            <div class="demo-section good-example">
+                <h3>Description List</h3>
+                <dl>
+                    <dt>HTML</dt>
+                    <dd>HyperText Markup Language - defines structure and content</dd>
+                    
+                    <dt>CSS</dt>
+                    <dd>Cascading Style Sheets - controls presentation and layout</dd>
+                    
+                    <dt>JavaScript</dt>
+                    <dd>Programming language for web interactivity</dd>
+                </dl>
+            </div>
+
+            <div class="demo-section">
+                <h3>Nested Lists</h3>
+                <ul>
+                    <li>Frontend Development
+                        <ul>
+                            <li>HTML Fundamentals</li>
+                            <li>CSS Styling
+                                <ol>
+                                    <li>Selectors</li>
+                                    <li>Properties</li>
+                                    <li>Layout</li>
+                                </ol>
+                            </li>
+                            <li>JavaScript Programming</li>
+                        </ul>
+                    </li>
+                    <li>Backend Development
+                        <ul>
+                            <li>Server-side languages</li>
+                            <li>Databases</li>
+                            <li>APIs</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Basic Table with Proper Headers</h2>
+            
+            <div class="demo-section good-example">
+                <table>
+                    <caption>Monthly Website Traffic Statistics</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Month</th>
+                            <th scope="col">Visitors</th>
+                            <th scope="col">Page Views</th>
+                            <th scope="col">Bounce Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">January</th>
+                            <td>15,420</td>
+                            <td>45,260</td>
+                            <td>32%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">February</th>
+                            <td>18,750</td>
+                            <td>52,100</td>
+                            <td>28%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">March</th>
+                            <td>22,100</td>
+                            <td>61,800</td>
+                            <td>25%</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Total</th>
+                            <td>56,270</td>
+                            <td>159,160</td>
+                            <td>28%</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Complex Table with Headers Attribute</h2>
+            
+            <div class="demo-section">
+                <table>
+                    <caption>
+                        Quarterly Sales by Product Category
+                        <details>
+                            <summary>Table Description</summary>
+                            <p>This table shows sales figures for different product categories across four quarters, including totals and growth percentages.</p>
+                        </details>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th id="product" scope="col">Product</th>
+                            <th id="q1" scope="col">Q1 2024</th>
+                            <th id="q2" scope="col">Q2 2024</th>
+                            <th id="q3" scope="col">Q3 2024</th>
+                            <th id="q4" scope="col">Q4 2024</th>
+                            <th id="total" scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="laptops" scope="row" headers="product">Laptops</th>
+                            <td headers="laptops q1">$125,000</td>
+                            <td headers="laptops q2">$140,000</td>
+                            <td headers="laptops q3">$155,000</td>
+                            <td headers="laptops q4">$170,000</td>
+                            <td headers="laptops total">$590,000</td>
+                        </tr>
+                        <tr>
+                            <th id="phones" scope="row" headers="product">Smartphones</th>
+                            <td headers="phones q1">$200,000</td>
+                            <td headers="phones q2">$220,000</td>
+                            <td headers="phones q3">$245,000</td>
+                            <td headers="phones q4">$280,000</td>
+                            <td headers="phones total">$945,000</td>
+                        </tr>
+                        <tr>
+                            <th id="tablets" scope="row" headers="product">Tablets</th>
+                            <td headers="tablets q1">$80,000</td>
+                            <td headers="tablets q2">$85,000</td>
+                            <td headers="tablets q3">$90,000</td>
+                            <td headers="tablets q4">$95,000</td>
+                            <td headers="tablets total">$350,000</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Quarterly Totals</th>
+                            <td>$405,000</td>
+                            <td>$445,000</td>
+                            <td>$490,000</td>
+                            <td>$545,000</td>
+                            <td>$1,885,000</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Accessibility Features Demonstrated</h2>
+            
+            <div class="demo-section">
+                <h3>List Accessibility</h3>
+                <ul>
+                    <li>✅ Semantic list elements (ul, ol, dl)</li>
+                    <li>✅ Proper nesting structure</li>
+                    <li>✅ Screen reader navigation support</li>
+                    <li>✅ Logical content organization</li>
+                </ul>
+
+                <h3>Table Accessibility</h3>
+                <ul>
+                    <li>✅ Table caption for context</li>
+                    <li>✅ Proper thead, tbody, tfoot structure</li>
+                    <li>✅ Scope attributes on headers</li>
+                    <li>✅ Headers attribute for complex relationships</li>
+                    <li>✅ Row and column headers clearly identified</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Common Mistakes to Avoid</h2>
+            
+            <div class="demo-section bad-example">
+                <h3>Wrong: Fake Lists with Divs</h3>
+                <div>• Item 1</div>
+                <div>• Item 2</div>
+                <div>• Item 3</div>
+                <p><strong>Problem:</strong> Screen readers can't navigate these as lists</p>
+            </div>
+
+            <div class="demo-section bad-example">
+                <h3>Wrong: Table Without Headers</h3>
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td>Age</td>
+                        <td>City</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>25</td>
+                        <td>NYC</td>
+                    </tr>
+                </table>
+                <p><strong>Problem:</strong> No way to identify what each column represents</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>&copy; 2024 Lists & Tables Demo. Demonstrates accessible HTML list and table implementation.</small></p>
+    </footer>
+</body>
+</html>

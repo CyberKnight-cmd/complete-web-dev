@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Debugging Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .demo-section { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        
+        /* Intentional issues for debugging practice */
+        .specificity-conflict {
+            color: blue; /* Lower specificity */
+        }
+        
+        #specific-id {
+            color: red; /* Higher specificity - wins */
+        }
+        
+        .box-model-issue {
+            width: 200px;
+            padding: 20px;
+            border: 10px solid #ccc;
+            /* Total width will be 260px, not 200px */
+        }
+        
+        .positioning-problem {
+            position: relative;
+            top: 20px;
+            left: 50px;
+            background: #e3f2fd;
+            padding: 10px;
+        }
+        
+        .hidden-element {
+            /* visibility: hidden; */
+            /* display: none; */
+            opacity: 0.1;
+            background: #ffebee;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Debugging Practice</h1>
+        <p>Use DevTools to inspect and debug these CSS issues.</p>
+    </header>
+
+    <main>
+        <section class="demo-section">
+            <h2>Specificity Conflict</h2>
+            <p class="specificity-conflict" id="specific-id">
+                This text has conflicting styles. Inspect to see which wins and why.
+            </p>
+        </section>
+
+        <section class="demo-section">
+            <h2>Box Model Issue</h2>
+            <div class="box-model-issue">
+                This box might not be the size you expect. Check the box model in DevTools.
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Positioning Problem</h2>
+            <div class="positioning-problem">
+                This element is positioned. Inspect to see the positioning values.
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Visibility Issue</h2>
+            <div class="hidden-element">
+                This element has visibility issues. Can you find and fix them?
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Right-click any element and select "Inspect" to start debugging!</p>
+    </footer>
+</body>
+</html>

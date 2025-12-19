@@ -1,0 +1,8 @@
+Too many things learned: 
+
+1. How to write for mobile
+2. What is rem?
+3. What is clamp?
+4. Flexbox mechanics
+5. Scroll snapping
+6. Layout architecture

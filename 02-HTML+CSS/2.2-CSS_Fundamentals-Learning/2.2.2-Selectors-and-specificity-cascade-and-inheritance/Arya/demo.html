@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors & Specificity Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        /* Basic selectors */
+        p { color: #333; line-height: 1.6; }
+        .highlight { background: yellow; padding: 2px 4px; }
+        #special { font-weight: bold; color: purple; }
+        
+        /* Specificity examples */
+        .low-spec { color: blue; } /* 0,0,1,0 = 10 */
+        div.medium-spec { color: green; } /* 0,0,1,1 = 11 */
+        #high-spec { color: red; } /* 0,1,0,0 = 100 */
+        
+        /* Cascade demonstration */
+        .cascade-test { color: blue; }
+        .cascade-test { color: red; } /* This wins - later in source */
+        
+        /* Inheritance examples */
+        .parent { color: #666; font-size: 18px; border: 2px solid #ddd; }
+        
+        /* Pseudo-classes */
+        .hover-demo:hover { background: #f0f0f0; cursor: pointer; }
+        .focus-demo:focus { outline: 2px solid blue; }
+        
+        /* Pseudo-elements */
+        .quote::before { content: """; font-size: 1.2em; }
+        .quote::after { content: """; font-size: 1.2em; }
+        
+        /* Combinators */
+        .container > .direct-child { border-left: 3px solid green; padding-left: 10px; }
+        .container .descendant { font-style: italic; }
+        h3 + p { margin-top: 0; color: #666; }
+        
+        /* Demo styling */
+        .demo-section { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .specificity-demo { padding: 15px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; }
+        .spec-value { font-family: monospace; background: #e0e0e0; padding: 2px 6px; border-radius: 3px; }
+        
+        /* Attribute selectors */
+        [data-type="warning"] { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; }
+        [href^="https"] { color: green; }
+        [href$=".pdf"] { color: red; }
+        
+        /* Structural pseudo-classes */
+        .list-demo li:first-child { font-weight: bold; }
+        .list-demo li:nth-child(even) { background: #f0f0f0; }
+        .list-demo li:last-child { border-bottom: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Selectors, Specificity, Cascade & Inheritance Demo</h1>
+        <p>This page demonstrates CSS selector types, specificity calculation, cascade rules, and inheritance behavior.</p>
+    </header>
+
+    <main>
+        <section class="demo-section">
+            <h2>Basic Selectors</h2>
+            
+            <h3>Element, Class, and ID Selectors</h3>
+            <p>This paragraph uses the element selector styling.</p>
+            <p class="highlight">This paragraph has a class selector applied.</p>
+            <p id="special">This paragraph has an ID selector applied.</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>Specificity Demonstration</h2>
+            
+            <div class="specificity-demo low-spec">
+                <strong>Low Specificity:</strong> <span class="spec-value">0,0,1,0 (10 points)</span><br>
+                Selector: <code>.low-spec</code>
+            </div>
+            
+            <div class="specificity-demo medium-spec">
+                <strong>Medium Specificity:</strong> <span class="spec-value">0,0,1,1 (11 points)</span><br>
+                Selector: <code>div.medium-spec</code>
+            </div>
+            
+            <div class="specificity-demo" id="high-spec">
+                <strong>High Specificity:</strong> <span class="spec-value">0,1,0,0 (100 points)</span><br>
+                Selector: <code>#high-spec</code>
+            </div>
+            
+            <div class="specificity-demo" style="color: orange;">
+                <strong>Inline Style:</strong> <span class="spec-value">1,0,0,0 (1000 points)</span><br>
+                Applied via: <code>style="color: orange;"</code>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Cascade Order</h2>
+            
+            <div class="cascade-test">
+                This text demonstrates cascade order. Two rules with same specificity - the later one wins (red).
+            </div>
+            
+            <h3>Source Order Matters</h3>
+            <p>When selectors have equal specificity, the last rule in the source code wins.</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>Inheritance</h2>
+            
+            <div class="parent">
+                <h3>Parent Element</h3>
+                <p>This parent has: color: #666, font-size: 18px, border: 2px solid #ddd</p>
+                
+                <div class="child">
+                    <h4>Child Element</h4>
+                    <p><strong>Inherited:</strong> color and font-size</p>
+                    <p><strong>Not inherited:</strong> border (you don't see it on this child)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Pseudo-classes</h2>
+            
+            <div class="hover-demo" style="padding: 10px; border: 1px solid #ddd;">
+                Hover over this element to see :hover effect
+            </div>
+            
+            <input type="text" class="focus-demo" placeholder="Click to focus and see :focus effect">
+        </section>
+
+        <section class="demo-section">
+            <h2>Pseudo-elements</h2>
+            
+            <p class="quote">This text has pseudo-elements adding quotation marks before and after.</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>Combinators</h2>
+            
+            <div class="container">
+                <h3>Container Element</h3>
+                <div class="direct-child">
+                    Direct child (>) - has green left border
+                    <div class="descendant">
+                        Descendant ( ) - has italic text
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Adjacent Sibling Example</h3>
+            <p>This paragraph follows an h3, so it has reduced top margin and gray color.</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>Attribute Selectors</h2>
+            
+            <div data-type="warning">This div has a data-type="warning" attribute</div>
+            
+            <p>Links with different attributes:</p>
+            <ul>
+                <li><a href="https://example.com">HTTPS link (green)</a></li>
+                <li><a href="http://example.com">HTTP link (default)</a></li>
+                <li><a href="document.pdf">PDF link (red)</a></li>
+            </ul>
+        </section>
+
+        <section class="demo-section">
+            <h2>Structural Pseudo-classes</h2>
+            
+            <ul class="list-demo">
+                <li>First item (bold)</li>
+                <li>Second item (even - gray background)</li>
+                <li>Third item (odd - normal)</li>
+                <li>Fourth item (even - gray background)</li>
+                <li>Last item (bold, no bottom border)</li>
+            </ul>
+        </section>
+
+        <section class="demo-section">
+            <h2>Specificity Calculator</h2>
+            
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background: #f0f0f0;">
+                        <th style="border: 1px solid #ddd; padding: 10px;">Selector</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Inline</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">IDs</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Classes</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Elements</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;"><code>p</code></td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">0</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">0</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">0</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">1</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">1</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;"><code>.highlight</code></td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">0</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">0</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">1</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">0</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">10</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;"><code>#header</code></td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">0</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">1</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">0</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">0</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">100</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;"><code>style=""</code></td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">1</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">0</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">0</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">0</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">1000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CSS Selectors & Specificity Demo. Open DevTools to inspect computed styles and specificity.</p>
+    </footer>
+</body>
+</html>

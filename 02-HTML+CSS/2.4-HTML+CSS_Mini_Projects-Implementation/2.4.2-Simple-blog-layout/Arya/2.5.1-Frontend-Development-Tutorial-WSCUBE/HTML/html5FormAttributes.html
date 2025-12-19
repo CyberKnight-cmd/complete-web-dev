@@ -1,0 +1,84 @@
+<!-- 
+    HTML5 Form Attributes Used:
+    Type (color, date, email, number, password, hidden),
+    Below given are the parameters that can be used with various input types: 
+required,
+    Placeholder,
+    Autofocus,
+    Value,
+    Checked,
+    Read only,
+    Disabled,
+    Min,
+    Max -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function checkFormValues(event) {
+            event.preventDefault(); // Stop the form from submitting
+
+            // Get values from inputs
+            let color = document.getElementById("favcolor").value;
+            let date = document.getElementById("date").value;
+            let email = document.getElementById("email").value;
+            let number = document.getElementById("number").value;
+            let password = document.getElementById("password").value;
+            let secret = document.getElementById("secret").value;
+            // Show the values
+            alert(
+                "Color: " + color + "\n" +
+                "Date: " + date + "\n" +
+                "Email: " + email + "\n" +
+                "Number: " + number + "\n" +
+                "Password: " + password + "\n" +
+                "Secret: " + secret
+            );
+        }
+    </script>
+
+    </head>
+<body>
+    <fieldset>
+        <legend>HTML5 Form</legend>
+
+        <!-- Add onsubmit event HERE -->
+        <form onsubmit="checkFormValues(event)">
+
+            <label for="favcolor">Color:</label>
+            <input type="color" id="favcolor" name="favcolor">
+            <br><br>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label for="number">Number:</label>
+            <input type="number" id="number" name="number" min="1" max="10" required>
+            <br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+
+            <!-- Hidden field -->
+            <input type="hidden" id="secret" name="secret" value="mySecretValue">
+
+            <input type="submit" value="Send">
+
+        </form>
+    </fieldset>
+</body>
+
+</html>
