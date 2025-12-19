@@ -1,0 +1,103 @@
+/* RESET */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+
+body{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #000000, #f0f0f0);
+    overflow: hidden;
+}
+
+/* CONTAINER */
+
+.container{
+    width: 100%;
+    max-width: 1400px;
+    height: min(70vh, 720px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-inline: clamp(1rem, 5vw, 10%);
+}
+
+/* CARDS */
+
+.container div{
+    height: 100%;
+    flex: 0 0 clamp(100px, 15vw, 180px);
+    border-radius: 35px;
+    border: 2px solid white;
+    margin: 5px;
+    background-position: center;
+    background-size: cover;
+    transition: flex 0.5s ease, border-radius 0.3s ease-in;
+    will-change: flex;
+}
+
+/* HOVER EXPAND */
+
+.container div:hover{
+    flex: 1;
+}
+
+
+/* ON TAP */
+
+
+/* BACKGROUNDS */
+
+.one{
+    background-image: url("images/1.jpg");
+}
+
+.two{
+    background-image: url("images/2.jpg");
+}
+
+.three{
+    background-image: url("images/3.jpg");
+}
+
+.four{
+    background-image: url("images/4.jpg");
+}
+
+/* TOUCH DEVICES (NO HOVER) */
+@media (hover: none) {
+    .container {
+        height: auto;
+    }
+
+    .container div {
+        height: 60vh;
+    }
+
+    /* hover is unreliable on touch — neutralize it */
+    .container div:hover {
+        flex: 0 0 clamp(100px, 15vw, 180px);
+    }
+}
+
+/* SMALL SCREENS */
+@media (max-width: 600px) {
+    .container {
+        justify-content: center;
+    }
+
+    .container div {
+        border-radius: 25px;
+        margin: 4px;
+    }
+}
+
+/* Add the action for mobile later */
+

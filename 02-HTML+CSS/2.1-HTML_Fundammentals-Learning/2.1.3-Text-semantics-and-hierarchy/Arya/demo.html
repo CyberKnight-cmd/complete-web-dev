@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Semantics & Hierarchy Demo</title>
+    <style>
+        body { font-family: Georgia, serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        .example-section { background: #f8f9fa; padding: 20px; margin: 20px 0; border-left: 4px solid #007bff; }
+        .wrong-example { background: #f8d7da; border-left-color: #dc3545; }
+        .correct-example { background: #d4edda; border-left-color: #28a745; }
+        code { background: #f1f3f4; padding: 2px 6px; border-radius: 3px; font-family: 'Courier New', monospace; }
+        pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        pre code { background: none; padding: 0; }
+        .small-text-demo { font-size: 0.9em; color: #6c757d; }
+        kbd { background: #212529; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+        samp { background: #e9ecef; padding: 10px; display: block; border-radius: 3px; font-family: monospace; }
+        blockquote { border-left: 4px solid #6c757d; padding-left: 20px; margin: 20px 0; font-style: italic; }
+        .outline-demo { background: #fff3cd; padding: 15px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Text Semantics & Hierarchy Demonstration</h1>
+        <p>This page demonstrates proper HTML text semantics and heading hierarchy with practical examples.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Heading Hierarchy Examples</h2>
+            
+            <div class="example-section correct-example">
+                <h3>Correct Heading Structure</h3>
+                <p>This demonstrates proper heading hierarchy without skipping levels:</p>
+                
+                <div class="outline-demo">
+                    <h4>Article: "Understanding Web Development"</h4>
+                    <h5>Section: Introduction to HTML</h5>
+                    <h6>Subsection: HTML Elements</h6>
+                    <h6>Subsection: HTML Attributes</h6>
+                    <h5>Section: CSS Fundamentals</h5>
+                    <h6>Subsection: Selectors</h6>
+                    <h6>Subsection: Properties</h6>
+                </div>
+            </div>
+
+            <div class="example-section wrong-example">
+                <h3>Incorrect Heading Structure (Don't Do This)</h3>
+                <p>This shows what <strong>not</strong> to do - skipping heading levels:</p>
+                <code>&lt;h1&gt;Main Title&lt;/h1&gt;<br>
+                &lt;h4&gt;Section&lt;/h4&gt; &lt;!-- WRONG: Skipped h2 and h3 --&gt;</code>
+            </div>
+        </section>
+
+        <section>
+            <h2>Text Semantic Elements</h2>
+            
+            <h3>Emphasis vs Strong Importance</h3>
+            <div class="example-section">
+                <p>I <em>really</em> love this chocolate cake! (stress emphasis)</p>
+                <p>I really love this <em>chocolate</em> cake! (different emphasis, different meaning)</p>
+                <p><strong>Warning:</strong> This action cannot be undone. (strong importance)</p>
+                <p>The meeting is <strong>today</strong> at 3 PM. (urgent/important)</p>
+            </div>
+
+            <h3>Small Text Usage</h3>
+            <div class="example-section">
+                <p>Our premium service starts at $99/month.</p>
+                <p><small>*Price subject to change. Additional fees may apply. See terms and conditions for details.</small></p>
+                
+                <p>Copyright notice example:</p>
+                <p><small>&copy; 2024 WebDev Learning. All rights reserved.</small></p>
+            </div>
+
+            <h3>Code Examples</h3>
+            <div class="example-section">
+                <h4>Inline Code</h4>
+                <p>Use the <code>console.log()</code> function to output messages in JavaScript.</p>
+                <p>The HTML <code>&lt;div&gt;</code> element is a generic container.</p>
+                
+                <h4>Code Blocks</h4>
+                <p>Here's a JavaScript function example:</p>
+                <pre><code>function calculateArea(radius) {
+    const pi = 3.14159;
+    return pi * radius * radius;
+}
+
+// Usage example
+const area = calculateArea(5);
+console.log("Area:", area);</code></pre>
+
+                <h4>Keyboard Input</h4>
+                <p>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save your work.</p>
+                <p>Use <kbd>F12</kbd> to open browser developer tools.</p>
+
+                <h4>Sample Output</h4>
+                <p>When you run the above function, you'll see:</p>
+                <samp>Area: 78.53975</samp>
+            </div>
+        </section>
+
+        <section>
+            <h2>Additional Text Semantics</h2>
+            
+            <h3>Quotations</h3>
+            <div class="example-section">
+                <p>As Einstein once said, <q>Imagination is more important than knowledge.</q></p>
+                
+                <blockquote cite="https://example.com/source">
+                    <p>The best way to predict the future is to invent it.</p>
+                    <footer>— <cite>Alan Kay</cite></footer>
+                </blockquote>
+            </div>
+
+            <h3>Abbreviations and Definitions</h3>
+            <div class="example-section">
+                <p>The <abbr title="World Wide Web">WWW</abbr> revolutionized information sharing.</p>
+                <p>We use <abbr title="HyperText Markup Language">HTML</abbr> to structure web content.</p>
+                
+                <p><dfn>Semantic HTML</dfn> refers to the use of HTML markup to reinforce the meaning of information in web pages rather than merely to define its presentation.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Document Outline Structure</h2>
+            <div class="example-section">
+                <p>This page follows a logical heading hierarchy that creates the following outline:</p>
+                <ol>
+                    <li>Text Semantics & Hierarchy Demonstration (h1)
+                        <ol>
+                            <li>Heading Hierarchy Examples (h2)
+                                <ol>
+                                    <li>Correct Heading Structure (h3)</li>
+                                    <li>Incorrect Heading Structure (h3)</li>
+                                </ol>
+                            </li>
+                            <li>Text Semantic Elements (h2)
+                                <ol>
+                                    <li>Emphasis vs Strong Importance (h3)</li>
+                                    <li>Small Text Usage (h3)</li>
+                                    <li>Code Examples (h3)
+                                        <ol>
+                                            <li>Inline Code (h4)</li>
+                                            <li>Code Blocks (h4)</li>
+                                            <li>Keyboard Input (h4)</li>
+                                            <li>Sample Output (h4)</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>Additional Text Semantics (h2)</li>
+                            <li>Document Outline Structure (h2)</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>Accessibility Benefits</h2>
+            <div class="example-section">
+                <p>Proper text semantics and hierarchy provide several accessibility benefits:</p>
+                <ul>
+                    <li><strong>Screen Reader Navigation:</strong> Users can jump between headings using shortcuts</li>
+                    <li><strong>Document Structure:</strong> Assistive technologies understand content organization</li>
+                    <li><strong>Search Engine Optimization:</strong> Better content understanding and indexing</li>
+                    <li><strong>Keyboard Navigation:</strong> Logical tab order and focus management</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>&copy; 2024 Text Semantics Demo. This page demonstrates proper HTML text hierarchy and semantic usage.</small></p>
+    </footer>
+</body>
+</html>

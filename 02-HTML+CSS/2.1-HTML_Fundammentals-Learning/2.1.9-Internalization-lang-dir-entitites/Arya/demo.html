@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internationalization Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; }
+        .demo-section { background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .rtl-demo { direction: rtl; text-align: right; }
+        .entity-demo { background: #e3f2fd; padding: 15px; border-radius: 5px; font-family: monospace; }
+        code { background: #f1f3f4; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Internationalization: Language, Direction & Entities Demo</h1>
+        <p>This page demonstrates HTML internationalization features including language declaration, text direction, and character entities.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Language Declaration Examples</h2>
+            
+            <div class="demo-section">
+                <h3>Multiple Languages</h3>
+                <p>English: Hello, welcome to our website!</p>
+                <p lang="es">Spanish: ¡Hola, bienvenido a nuestro sitio web!</p>
+                <p lang="fr">French: Bonjour, bienvenue sur notre site web!</p>
+                <p lang="de">German: Hallo, willkommen auf unserer Website!</p>
+                <p lang="ja">Japanese: こんにちは、私たちのウェブサイトへようこそ！</p>
+                <p lang="ar">Arabic: مرحبا، أهلا بك في موقعنا!</p>
+                
+                <h4>Code Example:</h4>
+                <code>&lt;p lang="es"&gt;¡Hola, bienvenido!&lt;/p&gt;</code>
+            </div>
+        </section>
+
+        <section>
+            <h2>Text Direction Examples</h2>
+            
+            <div class="demo-section">
+                <h3>Right-to-Left Text</h3>
+                <p>Default LTR: This text flows from left to right.</p>
+                <p dir="rtl" lang="ar">RTL Arabic: هذا النص يتدفق من اليمين إلى اليسار</p>
+                <p dir="rtl" lang="he">RTL Hebrew: טקסט זה זורם מימין לשמאל</p>
+                
+                <h3>Bidirectional Text</h3>
+                <p dir="auto">Mixed: Hello مرحبا World שלום!</p>
+                <p>English with <span lang="ar" dir="rtl">النص العربي</span> embedded.</p>
+                
+                <h4>Code Example:</h4>
+                <code>&lt;p dir="rtl" lang="ar"&gt;النص العربي&lt;/p&gt;</code>
+            </div>
+        </section>
+
+        <section>
+            <h2>HTML Character Entities</h2>
+            
+            <div class="demo-section">
+                <h3>Reserved Characters</h3>
+                <div class="entity-demo">
+                    &lt; (less than) = &amp;lt;<br>
+                    &gt; (greater than) = &amp;gt;<br>
+                    &amp; (ampersand) = &amp;amp;<br>
+                    " (quote) = &amp;quot;<br>
+                    ' (apostrophe) = &amp;apos;
+                </div>
+
+                <h3>Accented Characters</h3>
+                <div class="entity-demo">
+                    á = &amp;aacute; &nbsp; é = &amp;eacute; &nbsp; í = &amp;iacute;<br>
+                    ó = &amp;oacute; &nbsp; ú = &amp;uacute; &nbsp; ñ = &amp;ntilde;<br>
+                    ç = &amp;ccedil; &nbsp; ü = &amp;uuml; &nbsp; ö = &amp;ouml;
+                </div>
+
+                <h3>Symbols and Currency</h3>
+                <div class="entity-demo">
+                    © = &amp;copy; &nbsp; ® = &amp;reg; &nbsp; ™ = &amp;trade;<br>
+                    € = &amp;euro; &nbsp; £ = &amp;pound; &nbsp; ¥ = &amp;yen;<br>
+                    § = &amp;sect; &nbsp; ¶ = &amp;para; &nbsp; • = &amp;bull;
+                </div>
+
+                <h3>Mathematical Symbols</h3>
+                <div class="entity-demo">
+                    ∞ = &amp;infin; &nbsp; ≠ = &amp;ne; &nbsp; ≤ = &amp;le;<br>
+                    ≥ = &amp;ge; &nbsp; ± = &amp;plusmn; &nbsp; × = &amp;times;<br>
+                    ÷ = &amp;divide; &nbsp; √ = &amp;radic; &nbsp; ∑ = &amp;sum;
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Numeric Character References</h2>
+            
+            <div class="demo-section">
+                <h3>Decimal and Hexadecimal</h3>
+                <div class="entity-demo">
+                    © = &amp;#169; (decimal) = &amp;#xA9; (hex)<br>
+                    € = &amp;#8364; (decimal) = &amp;#x20AC; (hex)<br>
+                    ™ = &amp;#8482; (decimal) = &amp;#x2122; (hex)<br>
+                    ♥ = &amp;#9829; (decimal) = &amp;#x2665; (hex)
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Practical Examples</h2>
+            
+            <div class="demo-section">
+                <h3>Multilingual Contact Information</h3>
+                <address>
+                    <p><strong>English:</strong> 123 Main Street, New York, NY 10001</p>
+                    <p lang="es"><strong>Español:</strong> Calle Principal 123, Nueva York, NY 10001</p>
+                    <p lang="fr"><strong>Français:</strong> 123 Rue Principale, New York, NY 10001</p>
+                </address>
+
+                <h3>Code Snippets with Entities</h3>
+                <pre><code>&lt;script&gt;
+    if (x &lt; 10 &amp;&amp; y &gt; 5) {
+        console.log("Condition met");
+    }
+&lt;/script&gt;</code></pre>
+
+                <h3>Legal Text with Symbols</h3>
+                <p><small>© 2024 Company Name. All rights reserved. Product™ is a registered trademark®.</small></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Accessibility Considerations</h2>
+            
+            <div class="demo-section">
+                <h3>Screen Reader Benefits</h3>
+                <ul>
+                    <li>✅ <code>lang</code> attributes enable proper pronunciation</li>
+                    <li>✅ <code>dir</code> attributes control reading direction</li>
+                    <li>✅ Character entities ensure proper display</li>
+                    <li>✅ UTF-8 encoding supports all languages</li>
+                </ul>
+
+                <h3>Testing Checklist</h3>
+                <ul>
+                    <li>□ Document language declared in html tag</li>
+                    <li>□ Language changes marked with lang attribute</li>
+                    <li>□ Text direction set for RTL languages</li>
+                    <li>□ Special characters properly encoded</li>
+                    <li>□ UTF-8 charset declared in head</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p lang="en"><small>&copy; 2024 Internationalization Demo.</small></p>
+        <p lang="es"><small>© 2024 Demostración de Internacionalización.</small></p>
+        <p lang="fr"><small>© 2024 Démonstration d'Internationalisation.</small></p>
+    </footer>
+</body>
+</html>

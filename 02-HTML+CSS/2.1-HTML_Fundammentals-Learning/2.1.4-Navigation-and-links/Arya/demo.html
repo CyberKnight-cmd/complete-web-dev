@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation & Links Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        .demo-section { background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #007bff; }
+        .security-warning { background: #fff3cd; border-left-color: #ffc107; }
+        .good-example { background: #d4edda; border-left-color: #28a745; }
+        .bad-example { background: #f8d7da; border-left-color: #dc3545; }
+        nav { background: #e9ecef; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 20px; flex-wrap: wrap; }
+        nav li { margin: 0; }
+        nav a { text-decoration: none; color: #007bff; padding: 8px 12px; border-radius: 4px; transition: background 0.2s; }
+        nav a:hover { background: #007bff; color: white; }
+        .skip-link { position: absolute; top: -40px; left: 6px; background: #000; color: #fff; padding: 8px; text-decoration: none; border-radius: 4px; }
+        .skip-link:focus { top: 6px; }
+        .external-icon::after { content: " ↗"; font-size: 0.8em; }
+        .download-icon::before { content: "📄 "; }
+        .email-icon::before { content: "✉️ "; }
+        .phone-icon::before { content: "📞 "; }
+        code { background: #f1f3f4; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .url-structure { background: #e3f2fd; padding: 15px; border-radius: 5px; font-family: monospace; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #f8f9fa; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    </style>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <h1>Navigation & Links Demonstration</h1>
+        <p>This page demonstrates various types of HTML links, navigation patterns, and best practices for web accessibility and security.</p>
+    </header>
+
+    <!-- Main navigation -->
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="#internal-links" rel="bookmark">Internal Links</a></li>
+            <li><a href="#external-links" rel="bookmark">External Links</a></li>
+            <li><a href="#url-types" rel="bookmark">URL Types</a></li>
+            <li><a href="#link-attributes" rel="bookmark">Link Attributes</a></li>
+            <li><a href="#accessibility" rel="bookmark">Accessibility</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section id="internal-links">
+            <h2>Internal Navigation Links</h2>
+            
+            <div class="demo-section good-example">
+                <h3>Relative URL Examples</h3>
+                <ul>
+                    <li><a href="#top">Link to top of page (fragment)</a></li>
+                    <li><a href="demo.html">Same directory link</a></li>
+                    <li><a href="../README.md">Parent directory link</a></li>
+                    <li><a href="/02-HTML+CSS/README.md">Root-relative link</a></li>
+                </ul>
+                
+                <div class="url-structure">
+                    <strong>Current page structure:</strong><br>
+                    /02-HTML+CSS/2.1-HTML_Fundamentals-Learning/2.1.4-Navigation-and-links/Arya/<br>
+                    ├── demo.html (current page)<br>
+                    ├── notes.md<br>
+                    └── README.md
+                </div>
+            </div>
+
+            <div class="demo-section">
+                <h3>Sequential Navigation</h3>
+                <p>
+                    <a href="#" rel="prev">← Previous: Text Semantics</a> |
+                    <a href="#" rel="next">Next: Images & Media →</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="external-links">
+            <h2>External Links</h2>
+            
+            <div class="demo-section security-warning">
+                <h3>Secure External Links</h3>
+                <p>External links should always include proper security attributes:</p>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank" rel="noopener noreferrer" class="external-icon">MDN Documentation</a></li>
+                    <li><a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" rel="noopener noreferrer" class="external-icon">WCAG Guidelines</a></li>
+                    <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer" class="external-icon">W3C Validator</a></li>
+                </ul>
+                <p><strong>Note:</strong> These links include <code>rel="noopener noreferrer"</code> for security.</p>
+            </div>
+
+            <div class="demo-section bad-example">
+                <h3>Insecure External Link (Don't Do This)</h3>
+                <p>This is how <strong>NOT</strong> to create external links:</p>
+                <code>&lt;a href="https://external-site.com" target="_blank"&gt;Vulnerable Link&lt;/a&gt;</code>
+                <p><strong>Problem:</strong> Missing <code>rel="noopener"</code> creates security vulnerability.</p>
+            </div>
+        </section>
+
+        <section id="url-types">
+            <h2>Different URL Types</h2>
+            
+            <div class="demo-section">
+                <h3>Communication Links</h3>
+                <ul>
+                    <li><a href="mailto:demo@example.com?subject=Demo%20Inquiry&body=Hello%20from%20the%20demo%20page!" class="email-icon">Email with subject and body</a></li>
+                    <li><a href="tel:+1-555-123-4567" class="phone-icon">Phone number</a></li>
+                    <li><a href="sms:+1-555-123-4567?body=Hello%20from%20demo" class="phone-icon">SMS message</a></li>
+                </ul>
+
+                <h3>Download Links</h3>
+                <ul>
+                    <li><a href="#" download="sample-document.pdf" class="download-icon">Download PDF (sample)</a></li>
+                    <li><a href="#" download class="download-icon">Download with original filename</a></li>
+                </ul>
+
+                <h3>Protocol-Specific Links</h3>
+                <ul>
+                    <li><a href="ftp://ftp.example.com/files/">FTP Link</a></li>
+                    <li><a href="https://example.com" rel="external">HTTPS Link</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="link-attributes">
+            <h2>Link Attributes Reference</h2>
+            
+            <div class="demo-section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Value</th>
+                            <th>Purpose</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>rel</code></td>
+                            <td>noopener</td>
+                            <td>Security: Prevents opener access</td>
+                            <td><a href="https://example.com" target="_blank" rel="noopener">Secure link</a></td>
+                        </tr>
+                        <tr>
+                            <td><code>rel</code></td>
+                            <td>noreferrer</td>
+                            <td>Privacy: Hides referrer info</td>
+                            <td><a href="https://example.com" target="_blank" rel="noreferrer">Private link</a></td>
+                        </tr>
+                        <tr>
+                            <td><code>rel</code></td>
+                            <td>nofollow</td>
+                            <td>SEO: Don't follow for ranking</td>
+                            <td><a href="https://untrusted-site.com" rel="nofollow">Untrusted link</a></td>
+                        </tr>
+                        <tr>
+                            <td><code>target</code></td>
+                            <td>_blank</td>
+                            <td>Opens in new tab/window</td>
+                            <td><a href="https://example.com" target="_blank" rel="noopener">New tab</a></td>
+                        </tr>
+                        <tr>
+                            <td><code>download</code></td>
+                            <td>filename</td>
+                            <td>Forces download with name</td>
+                            <td><a href="#" download="file.pdf">Download as file.pdf</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="accessibility">
+            <h2>Accessibility Best Practices</h2>
+            
+            <div class="demo-section good-example">
+                <h3>Descriptive Link Text</h3>
+                <p>Good examples of accessible link text:</p>
+                <ul>
+                    <li><a href="#">Read our complete privacy policy</a></li>
+                    <li><a href="#">Download the user manual (PDF, 2.3MB)</a></li>
+                    <li><a href="#">View product specifications and pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="demo-section bad-example">
+                <h3>Poor Link Text (Avoid These)</h3>
+                <ul>
+                    <li><a href="#">Click here</a> for more information</li>
+                    <li><a href="#">Read more</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+                <p><strong>Problem:</strong> These don't provide context when read by screen readers.</p>
+            </div>
+
+            <div class="demo-section">
+                <h3>Enhanced Accessibility</h3>
+                <p>Links with additional context for screen readers:</p>
+                <ul>
+                    <li>
+                        <a href="https://example.com" target="_blank" rel="noopener">
+                            External Resource
+                            <span class="sr-only">(opens in new tab)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-describedby="pdf-help">
+                            Annual Report 2024
+                        </a>
+                        <span id="pdf-help" class="sr-only">PDF document, 5.2 megabytes</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Navigation Patterns</h2>
+            
+            <div class="demo-section">
+                <h3>Breadcrumb Navigation</h3>
+                <nav aria-label="Breadcrumb">
+                    <ol style="display: flex; list-style: none; padding: 0; gap: 10px;">
+                        <li><a href="/">Home</a></li>
+                        <li aria-hidden="true">→</li>
+                        <li><a href="/02-HTML+CSS/">HTML+CSS</a></li>
+                        <li aria-hidden="true">→</li>
+                        <li><a href="/02-HTML+CSS/2.1-HTML_Fundamentals-Learning/">HTML Fundamentals</a></li>
+                        <li aria-hidden="true">→</li>
+                        <li aria-current="page">Navigation & Links</li>
+                    </ol>
+                </nav>
+
+                <h3>Pagination</h3>
+                <nav aria-label="Pagination">
+                    <ul style="display: flex; list-style: none; padding: 0; gap: 10px;">
+                        <li><a href="#" rel="prev" aria-label="Go to previous page">← Previous</a></li>
+                        <li><a href="#" aria-label="Go to page 1">1</a></li>
+                        <li><a href="#" aria-current="page" aria-label="Current page, page 2">2</a></li>
+                        <li><a href="#" aria-label="Go to page 3">3</a></li>
+                        <li><a href="#" rel="next" aria-label="Go to next page">Next →</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>&copy; 2024 Navigation & Links Demo. This page demonstrates proper HTML link implementation and accessibility practices.</small></p>
+        <nav aria-label="Footer navigation">
+            <ul style="display: flex; list-style: none; padding: 0; gap: 20px; margin-top: 10px;">
+                <li><a href="#" rel="help">Help</a></li>
+                <li><a href="#" rel="license">License</a></li>
+                <li><a href="#" rel="author">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

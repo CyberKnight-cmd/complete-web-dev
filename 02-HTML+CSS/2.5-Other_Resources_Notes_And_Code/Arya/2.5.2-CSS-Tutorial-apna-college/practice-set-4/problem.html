@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Responsive Layout</title>
+
+<style>
+/* =====================
+   RESET + GLOBALS
+===================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =====================
+   HEADER / NAVBAR
+===================== */
+header {
+  background: #333;
+  color: white;
+}
+
+.top-bar {
+  background: #ffc400;
+  color: black;
+  text-align: center;
+  font-weight: 600;
+  padding: 4px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  gap: 12px;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: #ffc400;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-center a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.search {
+    display: flex;
+    gap: 6px;
+}
+
+.search input {
+    padding: 6px 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:1rem;
+}
+
+.search button {
+  background: #ffc400;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+}
+
+/* =====================
+   MAIN SECTION
+===================== */
+main {
+  flex: 1;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+}
+
+.panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: bold;
+  border: 5px solid black;
+}
+
+.left  { 
+    background-color: rgba(255,0, 0, 0.5); 
+}
+.center{
+    background: rgba(255, 217, 0, 0.5); 
+}
+.right{   
+    background: rgba(60, 255, 0, 0.5); 
+}
+/* =====================
+   FOOTER
+===================== */
+footer {
+  background: #333;
+  color: #ffc400;
+  text-align: center;
+  padding: 10px;
+  font-weight: 600;
+}
+
+/* =====================
+   MOBILE STYLES
+===================== */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+  }
+
+  .panel {
+    height: 100vh;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  .nav-center {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-right {
+    order: 2;
+  }
+
+  .nav-left {
+    order: 1;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="top-bar">Lorem ipsum dolor sit amet.</div>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="#" class="logo">blog.in</a>
+    </div>
+
+    <div class="nav-center">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="mailto:aryagupta164@gmail.com">Email Us</a>
+    </div>
+
+    <div class="nav-right search">
+      <input type="text" placeholder="Search..." />
+      <button>Go</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="section">
+    <div class="panel left">Left</div>
+    <div class="panel center">Center</div>
+    <div class="panel right">Right</div>
+  </section>
+</main>
+
+<footer>
+  All rights reserved
+</footer>
+
+</body>
+</html>

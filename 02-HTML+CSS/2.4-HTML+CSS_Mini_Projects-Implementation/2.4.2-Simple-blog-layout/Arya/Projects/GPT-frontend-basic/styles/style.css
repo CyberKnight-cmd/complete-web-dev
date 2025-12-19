@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background-color: #212121;
+    display: flex;
+}
+
+/* ---------------- Sidebar ---------------- */
+
+.sidebar {
+    background-color: #181818;
+    width: 19vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1vw;
+    padding-top: 1vh;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: whitesmoke;
+    font-size: 1.4rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar i {
+    margin-right: 6%;
+}
+
+.logo-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    background-color: #181818;
+}
+
+.gpt-logo {
+    width: 15%;
+    height: auto;
+}
+
+.sidebar-logo {
+    font-size: 2.2rem;
+    color: whitesmoke;
+}
+
+.first-box,
+.gpts-box,
+.group-chat-box,
+.chats-box {
+    margin-top: 15%;
+}
+
+.first-box p,
+.gpts-box p,
+.group-chat-box p,
+.chats-box p {
+    margin-top: 6%;
+}
+
+/* ---------------- Chat Area ---------------- */
+
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: calc(100vw - 19vw);
+}
+
+/* Top Nav */
+.nav {
+    margin-top: 2%;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav p {
+    margin-left: 1.5%;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Center Area */
+.mid-text {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Text + Input container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem; /* space between text & input */
+    color: white;
+}
+
+/* Main heading text */
+.container p {
+    font-size: 4rem;
+    text-align: center;
+}
+
+/* ---------------- Input Pill ---------------- */
+
+.input-box-container {
+    position: relative;
+    width: 760px;              /* 👈 wider than text */
+    max-width: 90vw;
+}
+
+/* Input itself */
+.text-input {
+    width: 100%;
+    height: 72px;              /* 👈 taller than text */
+    padding: 0 140px 0 60px;   /* space for buttons */
+
+    font-size: 1.6rem;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+
+    background-color: #2f2f2f;
+    color: white;
+}
+
+.text-input::placeholder {
+    color: #aaa;
+}
+
+/* ---------------- Buttons ---------------- */
+
+.icon-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+    border: none;
+
+    background: transparent;
+    color: #ccc;
+    font-size: 1.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.icon-btn.left {
+    left: 12px;
+}
+
+.icon-btn.right {
+    right: 12px;
+}
+
+.icon-btn.filled {
+    right: 64px;
+    background-color: #3a3a3a;
+}
+
+.icon-btn:hover {
+    background-color: #444;
+}
+
+/* Focus glow */
+.input-box-container:focus-within .text-input {
+    box-shadow: 0 0 0 2px #10a37f;
+}

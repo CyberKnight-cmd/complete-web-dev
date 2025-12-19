@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern HTML5 Elements</title>
+</head>
+<body>
+
+    <h1>Modern HTML5 Elements Demo</h1>
+
+    <!-- Progress bar: shows task completion -->
+    <label for="task">Task Progress:</label>
+    <progress id="task" value="90" max="100">70%</progress>
+    <br><br>
+
+    <!-- Datalist: provides autocomplete suggestions for input -->
+    <label for="browser">Choose your browser:</label>
+    <input list="browsers" id="browser" name="browser">
+    <datalist id="browsers">
+        <option value="Chrome">
+        <option value="Firefox">
+        <option value="Safari">
+        <option value="Edge">
+        <option value="Opera">
+    </datalist>
+    <br><br>
+
+    <!-- Output: displays calculation results -->
+    <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="number" id="a" value="0"> +
+        <input type="number" id="b" value="0"> =
+        <output name="result" for="a b">0</output>
+    </form>
+    <br>
+
+    <!-- Details and Summary: collapsible content -->
+    <details>
+        <summary>Click to see more details</summary>
+        <p>This is hidden content that appears when you click the summary.</p>
+        <p>You can put any HTML content here.</p>
+    </details>
+    <br>
+
+    <!-- Dialog: modal popup (requires JavaScript to open) -->
+    <dialog id="myDialog">
+        <h2>This is a Dialog</h2>
+        <p>Dialog boxes are used for important messages or forms.</p>
+        <button onclick="document.getElementById('myDialog').close()">Close</button>
+    </dialog>
+    <button onclick="document.getElementById('myDialog').showModal()">Open Dialog</button>
+    <br><br>
+
+    <!-- Mark: highlights text -->
+    <p>This is <mark>highlighted text</mark> using the mark tag.</p>
+
+    <!-- Time: represents date/time -->
+    <p>Meeting scheduled for <time datetime="2024-12-25 10:00">December 25, 2024 at 10:00 AM</time></p>
+
+</body>
+</html>

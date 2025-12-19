@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Loader</title>
+    <style>
+        div{
+            position: absolute;
+            top:45vh;
+            left:45vw;
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgb(0,0,0,0.1);
+            border-top: 4px solid rgb(0, 81, 255);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circular"></div>
+</body>
+</html>

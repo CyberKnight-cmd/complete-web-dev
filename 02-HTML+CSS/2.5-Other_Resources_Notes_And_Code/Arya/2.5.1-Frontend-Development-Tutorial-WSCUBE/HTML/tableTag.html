@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <!-- Table with border, alignment, background color, padding, spacing, width and height -->
+    <table border="5" align="center" bgcolor="yellow" cellpadding="5" cellspacing="2" width="1000" height="500">
+        <!-- Table header section -->
+        <thead>
+            <tr bgcolor="red" align="center">
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+
+        <!-- Table body section -->
+        <tbody>
+            <!-- colspan="2" makes this cell span 2 columns -->
+            <tr>
+                <td bgcolor="green" colspan="2">John Doe</td>
+                <td>25</td>
+            </tr>
+            <!-- rowspan="2" makes this cell span 2 rows -->
+            <tr>
+                <td bgcolor="blue" rowspan="2">Arya</td>
+                <td>Gupta</td>
+                <td>20</td>
+            </tr>
+            <!-- Third row to complete the rowspan -->
+            <tr>
+                <td>Singh</td>
+                <td>22</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

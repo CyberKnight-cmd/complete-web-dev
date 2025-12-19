@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<fieldset>
+    <legend><h2>Enquiry Form</h2></legend>
+
+    <form action="your-server-endpoint" method="post" enctype="multipart/form-data">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" cols="40" placeholder="Enter your address"></textarea><br><br>
+
+        Gender:<br>
+        <input type="radio" id="male" name="gender" value="m" checked>
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="f">
+        <label for="female">Female</label><br><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="">Please select a country</option>
+            <optgroup label="Asia">
+                <option value="India">India</option>
+                <option value="China">China</option>
+                <option value="Japan">Japan</option>
+            </optgroup>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Canada">Canada</option>
+        </select><br><br>
+
+        Hobbies:<br>
+        <input type="checkbox" id="dancing" name="hobby[]" value="Dancing">
+        <label for="dancing">Dancing</label>
+
+        <input type="checkbox" id="traveling" name="hobby[]" value="Traveling">
+        <label for="traveling">Traveling</label>
+
+        <input type="checkbox" id="swimming" name="hobby[]" value="Swimming">
+        <label for="swimming">Swimming</label>
+        <br><br>
+
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image">
+        <br><br>
+
+        <input type="submit" value="Send">
+        <input type="reset" value="Clear">
+
+    </form>
+</fieldset>
+
+</body>
+</html>

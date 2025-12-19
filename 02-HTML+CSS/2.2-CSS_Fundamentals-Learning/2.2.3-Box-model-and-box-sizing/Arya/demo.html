@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model & Box-Sizing Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        .demo-section { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        
+        /* Box model visualization */
+        .box-demo {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid #333;
+            margin: 20px;
+            background: #e3f2fd;
+            position: relative;
+        }
+        
+        /* Content-box vs Border-box comparison */
+        .content-box {
+            box-sizing: content-box;
+            width: 200px;
+            padding: 20px;
+            border: 5px solid red;
+            background: #ffebee;
+            margin: 10px;
+        }
+        
+        .border-box {
+            box-sizing: border-box;
+            width: 200px;
+            padding: 20px;
+            border: 5px solid blue;
+            background: #e3f2fd;
+            margin: 10px;
+        }
+        
+        /* Margin collapse examples */
+        .margin-collapse-1 {
+            background: #fff3e0;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid #ff9800;
+        }
+        
+        .margin-collapse-2 {
+            background: #f3e5f5;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #9c27b0;
+        }
+        
+        /* Comparison containers */
+        .comparison {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        
+        .box-info {
+            font-family: monospace;
+            font-size: 12px;
+            background: rgba(0,0,0,0.1);
+            padding: 5px;
+            margin-top: 10px;
+        }
+        
+        /* Visual measurement lines */
+        .measurement {
+            position: relative;
+            border: 2px dashed #666;
+            margin: 20px 0;
+        }
+        
+        .measurement::before {
+            content: attr(data-width);
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 2px 8px;
+            font-size: 12px;
+            border-radius: 3px;
+        }
+        
+        /* Debugging outline */
+        .debug * {
+            outline: 1px solid red;
+        }
+        
+        /* Responsive box example */
+        .responsive-box {
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 400px;
+            min-width: 200px;
+            padding: 20px;
+            border: 3px solid #4caf50;
+            background: #e8f5e8;
+            margin: 20px auto;
+        }
+        
+        /* Negative margin example */
+        .negative-margin {
+            background: #ffcdd2;
+            padding: 15px;
+            margin: 20px;
+            margin-top: -10px;
+            border: 2px solid #f44336;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Box Model & Box-Sizing Demo</h1>
+        <p>This page demonstrates the CSS box model, box-sizing property, and common layout behaviors.</p>
+    </header>
+
+    <main>
+        <section class="demo-section">
+            <h2>Box Model Components</h2>
+            
+            <div class="box-demo">
+                <strong>Content Area</strong>
+                <p>This is the content inside the box.</p>
+            </div>
+            
+            <div class="box-info">
+                Box dimensions:<br>
+                Content: 200px × 100px<br>
+                Padding: 20px all sides<br>
+                Border: 5px all sides<br>
+                Margin: 20px all sides<br>
+                <strong>Total space: 290px × 190px</strong>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Box-Sizing Comparison</h2>
+            
+            <div class="comparison">
+                <div>
+                    <h3>Content-Box (Default)</h3>
+                    <div class="content-box measurement" data-width="250px total">
+                        Content width: 200px
+                    </div>
+                    <div class="box-info">
+                        width: 200px<br>
+                        padding: 20px × 2 = 40px<br>
+                        border: 5px × 2 = 10px<br>
+                        <strong>Total: 250px</strong>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Border-Box</h3>
+                    <div class="border-box measurement" data-width="200px total">
+                        Content width: 150px
+                    </div>
+                    <div class="box-info">
+                        width: 200px (total)<br>
+                        padding: 20px × 2 = 40px<br>
+                        border: 5px × 2 = 10px<br>
+                        <strong>Content: 150px</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Margin Collapse</h2>
+            
+            <div class="margin-collapse-1">
+                <strong>First Box</strong><br>
+                margin-bottom: 30px
+            </div>
+            
+            <div class="margin-collapse-2">
+                <strong>Second Box</strong><br>
+                margin-top: 20px
+            </div>
+            
+            <p><strong>Result:</strong> Space between boxes is 30px (not 50px) due to margin collapse.</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>Responsive Box with Constraints</h2>
+            
+            <div class="responsive-box">
+                <h3>Responsive Box</h3>
+                <p>This box has:</p>
+                <ul>
+                    <li>width: 100%</li>
+                    <li>max-width: 400px</li>
+                    <li>min-width: 200px</li>
+                    <li>box-sizing: border-box</li>
+                </ul>
+                <p>Resize the browser to see it adapt!</p>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Negative Margins</h2>
+            
+            <div style="background: #e0e0e0; padding: 20px; margin: 20px;">
+                Normal positioned box
+            </div>
+            
+            <div class="negative-margin">
+                This box has margin-top: -10px, so it overlaps the box above.
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Box Model Debugging</h2>
+            
+            <div class="debug">
+                <h3>Debug Mode (Red Outlines)</h3>
+                <p>Every element has a red outline to visualize the box model.</p>
+                <div style="padding: 10px; margin: 10px;">
+                    <span>Nested elements</span> show their individual boxes.
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Practical Examples</h2>
+            
+            <h3>Card Layout with Border-Box</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="box-sizing: border-box; width: 100%; padding: 20px; border: 1px solid #ddd; background: white; border-radius: 8px;">
+                    <h4>Card 1</h4>
+                    <p>Using border-box makes these cards predictably sized.</p>
+                </div>
+                <div style="box-sizing: border-box; width: 100%; padding: 20px; border: 1px solid #ddd; background: white; border-radius: 8px;">
+                    <h4>Card 2</h4>
+                    <p>All cards are the same width despite padding and borders.</p>
+                </div>
+                <div style="box-sizing: border-box; width: 100%; padding: 20px; border: 1px solid #ddd; background: white; border-radius: 8px;">
+                    <h4>Card 3</h4>
+                    <p>This makes responsive layouts much easier to manage.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>DevTools Inspection</h2>
+            
+            <div style="width: 300px; padding: 25px; border: 8px solid #2196f3; margin: 30px; background: #e3f2fd;">
+                <h3>Inspect This Element</h3>
+                <p>Right-click and inspect this element to see the box model visualization in DevTools.</p>
+                <p>Look for the colorful box model diagram in the Styles panel!</p>
+            </div>
+            
+            <div class="box-info">
+                In DevTools, you'll see:<br>
+                • Blue: Content area<br>
+                • Green: Padding<br>
+                • Yellow: Border<br>
+                • Orange: Margin
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Box Model Demo. Use DevTools to inspect elements and see the box model visualization.</p>
+    </footer>
+</body>
+</html>

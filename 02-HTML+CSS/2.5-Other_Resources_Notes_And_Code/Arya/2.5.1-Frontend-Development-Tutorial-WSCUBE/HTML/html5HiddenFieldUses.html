@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Alert Demo</title>
+</head>
+<body>
+
+<fieldset>
+    <legend>HTML5 Form</legend>
+
+    <form id="myForm">
+
+        <label>Color:</label>
+        <input type="color" id="favcolor"><br><br>
+
+        <label>Date:</label>
+        <input type="date" id="date" required><br><br>
+
+        <label>Email:</label>
+        <input type="email" id="email" required><br><br>
+
+        <label>Number:</label>
+        <input type="number" id="number" min="1" max="10" required><br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password" required><br><br>
+
+        <!-- Hidden fields -->
+        <input type="hidden" id="timeSpent">
+        <input type="hidden" id="submissionId">
+        <input type="hidden" id="location">
+        <input type="hidden" id="userAgent">
+        <input type="hidden" id="submissionToken">
+
+        <input type="submit" value="Send">
+
+    </form>
+</fieldset>
+
+<script>
+    const form = document.getElementById("myForm");
+
+    // Track start time
+    const start = Date.now();
+
+    // Generate unique ID
+    const uid = crypto.randomUUID ? crypto.randomUUID() : "id-" + Date.now();
+    document.getElementById("submissionId").value = uid;
+    document.getElementById("submissionToken").value = uid;
+
+    // Browser/device info
+    document.getElementById("userAgent").value = navigator.userAgent;
+
+    // Try to get location
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+            pos => {
+                document.getElementById("location").value =
+                    pos.coords.latitude + "," + pos.coords.longitude;
+            },
+            err => {
+                document.getElementById("location").value = "Permission denied";
+            }
+        );
+    }
+
+    // On submit → show everything in an alert
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // stop real submit
+
+        // Time spent
+        const seconds = Math.round((Date.now() - start) / 1000);
+        document.getElementById("timeSpent").value = seconds;
+
+        // Show alert with everything
+        alert(
+            "----- FORM DATA -----\n\n" +
+            "Color: " + document.getElementById("favcolor").value + "\n" +
+            "Date: " + document.getElementById("date").value + "\n" +
+            "Email: " + document.getElementById("email").value + "\n" +
+            "Number: " + document.getElementById("number").value + "\n" +
+            "Password: " + document.getElementById("password").value + "\n\n" +
+            "----- HIDDEN DATA -----\n\n" +
+            "Time Spent: " + seconds + " seconds\n" +
+            "Submission ID: " + document.getElementById("submissionId").value + "\n" +
+            "Location: " + document.getElementById("location").value + "\n" +
+            "User Agent: " + document.getElementById("userAgent").value + "\n" +
+            "Token: " + document.getElementById("submissionToken").value
+        );
+    });
+</script>
+
+</body>
+</html>

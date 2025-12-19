@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display & Flow Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .demo-section { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        
+        /* Block examples */
+        .block-demo { display: block; background: #e3f2fd; padding: 15px; margin: 10px 0; border: 2px solid #2196f3; }
+        
+        /* Inline examples */
+        .inline-demo { display: inline; background: #fff3e0; padding: 15px; margin: 10px; border: 2px solid #ff9800; }
+        
+        /* Inline-block examples */
+        .inline-block-demo { display: inline-block; background: #e8f5e8; padding: 15px; margin: 10px; border: 2px solid #4caf50; width: 150px; }
+        
+        /* Navigation example */
+        .nav { background: #333; padding: 10px; }
+        .nav-item { display: inline-block; color: white; padding: 10px 15px; text-decoration: none; }
+        .nav-item:hover { background: #555; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Display & Flow Demonstration</h1>
+        <p>This page shows how different display values affect element behavior and document flow.</p>
+    </header>
+
+    <main>
+        <section class="demo-section">
+            <h2>Block Elements</h2>
+            <div class="block-demo">Block Element 1 - Takes full width</div>
+            <div class="block-demo">Block Element 2 - Stacks vertically</div>
+            <div class="block-demo">Block Element 3 - Can have width and height</div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Inline Elements</h2>
+            <p>This paragraph contains <span class="inline-demo">inline element 1</span> and <span class="inline-demo">inline element 2</span> that flow with the text. Notice how they <span class="inline-demo">wrap naturally</span> and don't break the text flow.</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>Inline-Block Elements</h2>
+            <div class="inline-block-demo">Inline-Block 1</div>
+            <div class="inline-block-demo">Inline-Block 2</div>
+            <div class="inline-block-demo">Inline-Block 3</div>
+            <p>These elements flow horizontally but can have width and height.</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>Practical Example: Navigation</h2>
+            <nav class="nav">
+                <a href="#" class="nav-item">Home</a>
+                <a href="#" class="nav-item">About</a>
+                <a href="#" class="nav-item">Services</a>
+                <a href="#" class="nav-item">Contact</a>
+            </nav>
+        </section>
+    </main>
+</body>
+</html>

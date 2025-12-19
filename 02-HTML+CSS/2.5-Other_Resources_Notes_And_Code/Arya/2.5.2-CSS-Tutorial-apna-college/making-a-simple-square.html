@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Tags Demo</title>
+    <style>
+        .row {
+            background-color: lightblue;
+            float: left;
+            box-sizing: border-box;
+            border: 2px solid black;
+        }
+
+        .mainBox{
+            background-color: aqua;
+            padding :63px;
+            width: 400px;
+            height: 300px;
+            border : 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cell{
+            padding : 20px;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 90px;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Div is a generic container used to group elements together -->
+    <!-- Parent div containing navigation items -->
+    <div class="mainBox">
+        <div class="row">
+            <!-- Child div for Home link -->
+            <div class="cell">
+                A
+            </div>
+            <!-- Child div for About link -->
+            <div class="cell">
+                C
+            </div>
+        </div>
+        <div class="row">
+            <!-- Child div for Home link -->
+            <div class="cell">
+                B
+            </div>
+            <!-- Child div for About link -->
+            <div class="cell">
+                D
+            </div>
+        </div>
+    </div>
+</body>
+</html>

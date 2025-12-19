@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors & Gradients Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .demo-section { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .color-box { width: 100px; height: 100px; display: inline-block; margin: 10px; border-radius: 8px; }
+        
+        /* Color format examples */
+        .hex { background: #ff6b6b; }
+        .rgb { background: rgb(74, 144, 226); }
+        .hsl { background: hsl(142, 71%, 45%); }
+        .rgba { background: rgba(255, 107, 107, 0.7); }
+        
+        /* Gradient examples */
+        .linear-gradient { background: linear-gradient(45deg, #ff6b6b, #4ecdc4); }
+        .radial-gradient { background: radial-gradient(circle, #ff6b6b, #4ecdc4); }
+        .complex-gradient { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Multiple backgrounds */
+        .multiple-bg {
+            background: 
+                linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Colors & Gradients Demo</h1>
+        <p>Demonstration of color formats, gradients, and multiple backgrounds.</p>
+    </header>
+
+    <main>
+        <section class="demo-section">
+            <h2>Color Formats</h2>
+            <div class="color-box hex"></div>
+            <div class="color-box rgb"></div>
+            <div class="color-box hsl"></div>
+            <div class="color-box rgba"></div>
+            <p>Hex, RGB, HSL, and RGBA color formats</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>Gradients</h2>
+            <div class="color-box linear-gradient"></div>
+            <div class="color-box radial-gradient"></div>
+            <div class="complex-gradient">Complex Linear Gradient</div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Multiple Backgrounds</h2>
+            <div class="multiple-bg">Overlay gradient on top of base gradient</div>
+        </section>
+    </main>
+</body>
+</html>

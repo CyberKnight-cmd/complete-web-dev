@@ -1,0 +1,142 @@
+/* External CSS file for demo */
+
+/* External styled content */
+.external-example {
+    background-color: #e8f5e8;
+    padding: 20px;
+    border-left: 4px solid #4caf50;
+    margin: 20px 0;
+}
+
+.external-example h3 {
+    color: #2e7d32;
+    margin-top: 0;
+}
+
+.external-example p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.external-button {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.external-button:hover {
+    background: #45a049;
+}
+
+/* Embedded button styling (will be overridden by embedded CSS) */
+.embedded-button {
+    background: #2196f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.embedded-button:hover {
+    background: #1976d2;
+}
+
+/* Specificity test - will be overridden by inline styles */
+.specificity-test {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px solid blue; /* This will be overridden by inline red border */
+}
+
+/* Best practice example */
+.best-practice-example {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.best-practice-example h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.highlight-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.highlight-box h4 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.highlight-box ul {
+    margin-bottom: 0;
+}
+
+/* Performance tips section */
+.performance-tips {
+    background: #fff3e0;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #ff9800;
+    margin: 20px 0;
+}
+
+.performance-tips h3 {
+    color: #e65100;
+    margin-top: 0;
+}
+
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+    border-radius: 10px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+}
+
+section {
+    margin: 40px 0;
+}
+
+section h2 {
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: #333;
+    color: white;
+    border-radius: 8px;
+}

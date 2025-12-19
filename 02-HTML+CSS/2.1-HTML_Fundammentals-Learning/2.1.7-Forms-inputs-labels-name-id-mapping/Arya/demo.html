@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .demo-section { background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        form { background: white; padding: 20px; border-radius: 5px; border: 1px solid #ddd; }
+        fieldset { margin: 20px 0; padding: 15px; border: 2px solid #ddd; border-radius: 5px; }
+        legend { font-weight: bold; padding: 0 10px; }
+        label { display: block; margin: 10px 0 5px; font-weight: bold; }
+        input, textarea, select { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        input[type="radio"], input[type="checkbox"] { width: auto; margin-right: 8px; }
+        .radio-group, .checkbox-group { display: flex; flex-wrap: wrap; gap: 15px; }
+        .radio-group label, .checkbox-group label { display: flex; align-items: center; margin: 5px 0; font-weight: normal; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        .good-example { background: #d4edda; border-left: 4px solid #28a745; }
+        .bad-example { background: #f8d7da; border-left: 4px solid #dc3545; }
+        .required { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Forms: Inputs, Labels, Name/ID Mapping Demo</h1>
+        <p>This page demonstrates proper HTML form implementation with accessibility features.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Complete Form Example</h2>
+            
+            <div class="demo-section good-example">
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        
+                        <label for="full-name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="full-name" name="fullName" required>
+                        
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                        
+                        <label for="birthdate">Date of Birth</label>
+                        <input type="date" id="birthdate" name="birthdate">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Contact Preferences</legend>
+                        
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" id="contact-email" name="contactMethod" value="email" checked>
+                                Email
+                            </label>
+                            <label>
+                                <input type="radio" id="contact-phone" name="contactMethod" value="phone">
+                                Phone
+                            </label>
+                            <label>
+                                <input type="radio" id="contact-mail" name="contactMethod" value="mail">
+                                Mail
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Interests</legend>
+                        
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" id="interest-web" name="interests" value="web">
+                                Web Development
+                            </label>
+                            <label>
+                                <input type="checkbox" id="interest-mobile" name="interests" value="mobile">
+                                Mobile Development
+                            </label>
+                            <label>
+                                <input type="checkbox" id="interest-design" name="interests" value="design">
+                                UI/UX Design
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Additional Information</legend>
+                        
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="">Select a country</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="au">Australia</option>
+                        </select>
+                        
+                        <label for="experience">Years of Experience</label>
+                        <input type="number" id="experience" name="experience" min="0" max="50">
+                        
+                        <label for="message">Additional Comments</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us more about yourself..."></textarea>
+                        
+                        <label for="resume">Upload Resume</label>
+                        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+                    </fieldset>
+
+                    <button type="submit">Submit Form</button>
+                    <button type="reset">Reset Form</button>
+                </form>
+            </div>
+        </section>
+
+        <section>
+            <h2>Input Type Examples</h2>
+            
+            <div class="demo-section">
+                <form>
+                    <fieldset>
+                        <legend>Text Input Types</legend>
+                        
+                        <label for="text-input">Text:</label>
+                        <input type="text" id="text-input" name="textInput" placeholder="Enter text">
+                        
+                        <label for="email-input">Email:</label>
+                        <input type="email" id="email-input" name="emailInput" placeholder="user@example.com">
+                        
+                        <label for="password-input">Password:</label>
+                        <input type="password" id="password-input" name="passwordInput">
+                        
+                        <label for="url-input">Website URL:</label>
+                        <input type="url" id="url-input" name="urlInput" placeholder="https://example.com">
+                        
+                        <label for="search-input">Search:</label>
+                        <input type="search" id="search-input" name="searchInput" placeholder="Search...">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Number and Range Inputs</legend>
+                        
+                        <label for="number-input">Age:</label>
+                        <input type="number" id="number-input" name="numberInput" min="0" max="120">
+                        
+                        <label for="range-input">Rating (1-10):</label>
+                        <input type="range" id="range-input" name="rangeInput" min="1" max="10" value="5">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Date and Time Inputs</legend>
+                        
+                        <label for="date-input">Date:</label>
+                        <input type="date" id="date-input" name="dateInput">
+                        
+                        <label for="time-input">Time:</label>
+                        <input type="time" id="time-input" name="timeInput">
+                        
+                        <label for="datetime-input">Date and Time:</label>
+                        <input type="datetime-local" id="datetime-input" name="datetimeInput">
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+
+        <section>
+            <h2>Label-Input Association Examples</h2>
+            
+            <div class="demo-section good-example">
+                <h3>Correct: Explicit Labeling</h3>
+                <label for="explicit-input">Username:</label>
+                <input type="text" id="explicit-input" name="username">
+                <p><code>&lt;label for="explicit-input"&gt;Username:&lt;/label&gt;<br>
+                &lt;input type="text" id="explicit-input" name="username"&gt;</code></p>
+            </div>
+
+            <div class="demo-section">
+                <h3>Alternative: Implicit Labeling</h3>
+                <label>
+                    Password:
+                    <input type="password" name="password">
+                </label>
+                <p><code>&lt;label&gt;Password: &lt;input type="password" name="password"&gt;&lt;/label&gt;</code></p>
+            </div>
+
+            <div class="demo-section bad-example">
+                <h3>Wrong: No Label Association</h3>
+                <span>Email:</span>
+                <input type="email" placeholder="Enter email">
+                <p><strong>Problem:</strong> Screen readers can't associate the text with the input</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Accessibility Features</h2>
+            
+            <div class="demo-section">
+                <h3>Form Accessibility Checklist</h3>
+                <ul>
+                    <li>✅ All inputs have associated labels</li>
+                    <li>✅ Labels use <code>for</code> attribute matching input <code>id</code></li>
+                    <li>✅ Related inputs grouped with <code>fieldset</code> and <code>legend</code></li>
+                    <li>✅ Required fields clearly marked</li>
+                    <li>✅ Appropriate input types used for better UX</li>
+                    <li>✅ Unique <code>id</code> attributes for each input</li>
+                    <li>✅ Descriptive <code>name</code> attributes for form processing</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>&copy; 2024 Forms Demo. Demonstrates accessible HTML form implementation.</small></p>
+    </footer>
+</body>
+</html>
